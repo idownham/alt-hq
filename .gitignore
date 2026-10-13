@@ -1,0 +1,6 @@
+# HQ tracks only its own files. Each project folder (alt-arb/, alt-scalp/, future ones) is its own repo.
+/*/
+!/docs/
+!/.claude/
+.DS_Store
+.env
