@@ -24,3 +24,11 @@ Coin Toss = alt-scalp (pre-kickoff markets near 50/50, fast in-and-out).
 
 ## 2026-10-13 — Coin Toss is Kalshi-only
 **Why:** Polymarket's public REST limit (~30 req/min) is per IP and already mostly used by Osprey's droplet scanner.
+
+## 2026-10-13 — Start Project Slot Machine (alt-btc15)
+**Decision (Ian):** third project — automated system for Kalshi's 15-minute BTC markets (`KXBTC15M`). Paper first,
+then small live with hard caps ($5/trade, $25/day, $100 total). Strategies: direction at open, open scalp (+10¢),
+late favorite, longshot fade. Replaces the "crypto-options" idea as the crypto track.
+**Context:** Ian watched the market live and placed a manual $5 trade (showed $5.57 sell value after 20 s).
+**Host:** paper trader may share Osprey's droplet (light load, modest Kalshi reads); live gets its own server so
+trading keys and money are isolated from Osprey.
