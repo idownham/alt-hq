@@ -33,12 +33,12 @@ Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
 ## Shared resources — don't starve each other
 | Resource | Who uses it | Where from |
 |---|---|---|
-| Kalshi public REST (Basic ≈ 20 req/s per key/IP) | Osprey scanner; Coin Toss recorder; Slot Machine paper trader | Droplet; laptop; droplet |
+| Kalshi public REST (Basic ≈ 20 req/s per key/IP) | Osprey scanner; Coin Toss recorder; Slot Machine paper trader | Droplet; laptop; laptop |
 | Polymarket US public REST (~30 req/min **per IP**, then 10 s block) | Osprey only | Droplet |
 - Coin Toss must not call Polymarket from the droplet. Any new project that needs Polymarket must run from a
   different IP or coordinate with Osprey first.
-- Slot Machine's paper trader may share Osprey's droplet as its own service/directory; it must never touch
-  alt-arb's files or service. Slot Machine's **live** phase runs on its own server with its own keys.
+- Slot Machine runs on the laptop for now (alongside Coin Toss's recorder — keep combined Kalshi reads modest).
+  Its **live** phase runs on its own server with its own keys.
 - Running services: Osprey scanner + daily pair refresh (DigitalOcean droplet `alt-arb`, systemd);
   Coin Toss recorder (laptop, launchd, runs from `~/code/alt/alt-scalp` — **don't move that folder** without
   reinstalling the launchd agent).

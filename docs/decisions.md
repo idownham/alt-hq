@@ -32,3 +32,7 @@ late favorite, longshot fade. Replaces the "crypto-options" idea as the crypto t
 **Context:** Ian watched the market live and placed a manual $5 trade (showed $5.57 sell value after 20 s).
 **Host:** paper trader may share Osprey's droplet (light load, modest Kalshi reads); live gets its own server so
 trading keys and money are isolated from Osprey.
+
+## 2026-10-13 — Slot Machine runs on the laptop
+**Decision (Ian):** run Slot Machine on the laptop for now, not Osprey's droplet. The laptop now hosts Coin Toss's
+recorder and Slot Machine; the droplet hosts only Osprey.

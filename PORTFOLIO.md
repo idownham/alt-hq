@@ -7,7 +7,7 @@
 |---|---|---|---|---|
 | **Osprey** (alt-arb) | Phase 2 — collecting clean data (since 2026-10-13); close-out/handoff in progress | Droplet: scanner (~4 min/scan, 626 verified markets, 8 leagues) + daily 9 am pair refresh | Decision point A, earliest ~**Oct 27** (needs 14 days clean data, ≥ 3 leagues) | GO ≥ 5 qualifying episodes/week · STOP < 1/week |
 | **Coin Toss** (alt-scalp) | S0 done, criteria confirmed; S1 recorder built | Laptop launchd agent, records each game −30 min → +20 min | 20 clean games (≥ 5 per league) by ~**Oct 22**; S2 analysis Oct 22–24 | Pre-registered in `alt-scalp/docs/spec.md` |
-| **Slot Machine** (alt-btc15) | S0 research + data clients | Not running yet; paper trader → Osprey droplet | S1 backtest, then ≥ 7 days paper | Go-live gate in `alt-btc15/docs/spec.md` (proposed; Ian to confirm) · caps $5/trade, $25/day, $100 total |
+| **Slot Machine** (alt-btc15) | S0 research + data clients | Not running yet; paper trader → laptop | S1 backtest, then ≥ 7 days paper | Go-live gate in `alt-btc15/docs/spec.md` (proposed; Ian to confirm) · caps $5/trade, $25/day, $100 total |
 
 ## Early signals (not conclusions)
 - Osprey (first ~2 h clean data): 4 episodes, all in-play, best ≈ $2.59; ~87% of pair checks cost ≥ $1.00 to hedge
