@@ -1,13 +1,19 @@
 # Portfolio
 
-*Last updated: 2026-10-13. Update this file in an HQ session whenever a project changes stage or a milestone moves.*
+*Last updated: 2026-10-14. Update this file in an HQ session whenever a project changes stage or a milestone moves.*
 
 ## Status
 | Project | Stage | Running where | Next milestone | Gate |
 |---|---|---|---|---|
 | **Osprey** (alt-arb) | Phase 2 — collecting clean data (since 2026-10-13); close-out/handoff in progress | Droplet: scanner (~4 min/scan, 626 verified markets, 8 leagues) + daily 9 am pair refresh | Decision point A, earliest ~**Oct 27** (needs 14 days clean data, ≥ 3 leagues) | GO ≥ 5 qualifying episodes/week · STOP < 1/week |
 | **Coin Toss** (alt-scalp) | S0 done, criteria confirmed; S1 recorder built | Laptop launchd agent, records each game −30 min → +20 min | 20 clean games (≥ 5 per league) by ~**Oct 22**; S2 analysis Oct 22–24 | Pre-registered in `alt-scalp/docs/spec.md` |
-| **Slot Machine** (alt-btc15) | S0 research + data clients | Not running yet; paper trader → laptop | S1 backtest, then ≥ 7 days paper | Go-live gate in `alt-btc15/docs/spec.md` (proposed; Ian to confirm) · caps $5/trade, $25/day, $100 total |
+| **Slot Machine** (alt-btc15) | **Stopped at S1 (2026-10-14)**: no strategy passed the out-of-sample backtest | Nothing running; never deployed, no keys | None. Result written up in `alt-btc15/docs/s1-results.md` | Failed the pre-registered S1 condition (test net P&L > 0) for all of A–D |
+
+## Results
+- **Slot Machine (final):** 12,690 KXBTC15M windows (Jun 1 – Oct 12), 61 pre-registered variants, test run once.
+  Test mean per trade: A −$0.81, B −$1.18, C −$0.27, D −$0.13. A–C still lose with generous fills (CIs below 0);
+  D ≈ 0. The 1-min bid/ask swing (~15–17¢) beats the +10¢ scalp, and late favorites are priced correctly. Verdict:
+  no edge after spread and fees at 1-minute speed. No money risked.
 
 ## Early signals (not conclusions)
 - Osprey (first ~2 h clean data): 4 episodes, all in-play, best ≈ $2.59; ~87% of pair checks cost ≥ $1.00 to hedge
@@ -36,5 +42,5 @@
       "0.07 base unconfirmed" item
 - [ ] Coin Toss: keep the laptop awake, online and plugged in during game windows; decide on a second server if
       windows get missed
-- [ ] Slot Machine: confirm the go-live gate; log manual phone trades in `alt-btc15/docs/manual-trades.md`
+- [x] Slot Machine: go-live gate no longer needed. Project stopped at S1 (2026-10-14).
 - [ ] Move `alt-arb` into `~/code/alt/` once its sessions are closed

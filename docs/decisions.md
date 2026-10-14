@@ -36,3 +36,10 @@ trading keys and money are isolated from Osprey.
 ## 2026-10-13 — Slot Machine runs on the laptop
 **Decision (Ian):** run Slot Machine on the laptop for now, not Osprey's droplet. The laptop now hosts Coin Toss's
 recorder and Slot Machine; the droplet hosts only Osprey.
+
+## 2026-10-14 — Slot Machine stopped at S1
+**Decision (Ian):** stop Project Slot Machine after its S1 backtest. No paper or live phase.
+**Evidence:** `alt-btc15/docs/s1-results.md`. None of strategies A–D passed the pre-registered out-of-sample test;
+A–C lose even with generous fills, D ≈ 0. Project decision: `alt-btc15/docs/decisions.md` (same date).
+**Consequence:** the laptop runs only Coin Toss's recorder, and Kalshi reads from the laptop are Coin Toss's alone.
+Slot Machine's code and docs stay as class evidence (a valid "no edge" result).
