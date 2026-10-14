@@ -47,6 +47,10 @@ It reopened the same day to record order books for a maker strategy S1 didn't te
 **2026-10-14 · Portfolio · HQ [9740601](https://github.com/idownham/alt-hq/commit/9740601)**
 Work: `/health` board, and folders renamed to code names. Concept brief written late (due Oct 11): `docs/class/01-concept-brief.md`.
 
+**2026-10-14 (evening) · Portfolio · HQ**
+Work: `/health` at 18:40 CT was 🟡 (laptop on battery during a Coin Toss window; Slot Machine lost ~25 min to a network/DNS drop, 17:26–17:59, outside any Coin Toss window). Checked all four project sessions; all healthy. Recorded Bloodhound's early S0 start in `PORTFOLIO.md`, `CLAUDE.md` and `docs/decisions.md`.
+Decision: Ian approved the HQ updates; criteria v2 stays *proposed*, and the rollcall.com source isn't listed until Ian answers Q4.
+
 ---
 
 ## AI log

@@ -82,3 +82,16 @@ seconds; it logged one 69 s gap (15:30:43–15:31:51), the planned downtime. Coi
 15:31:52; no game window was open, so it lost no recording. The Osprey daily-refresh scheduled task's prompt now
 uses the new path. The app's own folder settings (the task's working folder and the session presets) are changed by
 Ian in the app. Old Claude Code sessions still point at the old folders and won't reopen there; start new ones.
+
+## 2026-10-14 — Bloodhound S0 started ahead of its trigger
+**Decision (Ian):** start Bloodhound's S0 (research + lock the criteria) today, before the planned start trigger
+(Coin Toss recording done ~Oct 22, or Osprey Decision A = STOP), so the project has dated evidence for the Oct 25
+class checkpoint. Project decision: alt-edge `docs/decisions.md` (same date), commits a04f46f and 72d6b1b.
+**Limit:** read-only desk research. One-off, paced (≤ 1 req/s, 10 s back-off on 429), unauthenticated reads of
+public APIs only; no keys, no order code, no continuously running collectors (launchd/systemd/cron/24-7 polling)
+until a slot opens. Criteria stay draft until Ian approves them.
+**Evidence from S0:** mention markets close early once the word is said, so the closing price already contains the
+answer; the draft gate (beat the closing-price Brier) is replaced in the *proposed* criteria v2 by the price 15 min
+before the scheduled start, plus a ≥ 30-event minimum. Not confirmed — awaiting Ian (Q1–Q9).
+**Consequence:** Bloodhound is added to the shared-resources table as an occasional laptop reader of Kalshi public
+REST. Reading rollcall.com (Factbase) transcripts is pending Ian's answer to Q4 and isn't listed yet.
