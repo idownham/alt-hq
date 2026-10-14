@@ -8,7 +8,8 @@ description: Check the health of every running alt project (Osprey droplet scann
 Run from the HQ folder (`~/code/alt/`). **Read-only**: never start, stop, restart, reinstall, or edit anything.
 If something is broken, report it and suggest the fix; act only if Ian asks.
 
-Folder names (after the 2026-10 rename; if a folder isn't found, look for the old `alt-*` name and say so):
+Folder names (renamed 2026-10-14; GitHub repos keep their `alt-*` names). If a folder isn't found, check for the
+old `alt-*` name (or `~/code/alt-arb` for Osprey) and report it as 🔴 — something moved it back or a rename broke:
 `project-osprey/` (alt-arb), `project-coin-toss/` (alt-scalp), `project-slot-machine/` (alt-btc15),
 `project-bloodhound/` (alt-edge, planned — skip unless it has a `status` command).
 

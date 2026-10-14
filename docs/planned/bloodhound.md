@@ -1,6 +1,6 @@
 # Project Bloodhound (alt-edge) — planned spec
 
-*Captured 2026-10-14 in the planning chat. Becomes `alt-edge/docs/spec.md` when the repo is set up.*
+*Captured 2026-10-14 in the planning chat. Becomes `project-bloodhound/docs/spec.md` (repo alt-edge) when the repo is set up.*
 
 ## Hypothesis
 Some prediction markets — starting with **mention markets** ("Will [person] say [word] during [event]?") — are

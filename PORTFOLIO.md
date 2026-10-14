@@ -1,12 +1,12 @@
 # Portfolio
 
-*Last updated: 2026-10-14 (afternoon). Update this file in an HQ session whenever a project changes stage or a milestone moves.*
+*Last updated: 2026-10-14 (afternoon; local folders renamed to code names). Update this file in an HQ session whenever a project changes stage or a milestone moves.*
 
 ## Status
 | Project | Stage | Running where | Next milestone | Gate |
 |---|---|---|---|---|
 | **Osprey** (alt-arb) | Phase 2 — collecting clean data (since 2026-10-13); close-out/handoff in progress | Droplet: scanner (~4 min/scan, 626 verified markets, 8 leagues) + daily 9 am pair refresh | Decision point A, earliest ~**Oct 27** (needs 14 days clean data, ≥ 3 leagues) | GO ≥ 5 qualifying episodes/week · STOP < 1/week |
-| **Coin Toss** (alt-scalp) | S0 done, criteria confirmed; S1 recorder built | Laptop launchd agent, records each game −30 min → +20 min | 20 clean games (≥ 5 per league) by ~**Oct 22**; S2 analysis Oct 22–24 | Pre-registered in `alt-scalp/docs/spec.md` |
+| **Coin Toss** (alt-scalp) | S0 done, criteria confirmed; S1 recorder built | Laptop launchd agent, records each game −30 min → +20 min | 20 clean games (≥ 5 per league) by ~**Oct 22**; S2 analysis Oct 22–24 | Pre-registered in `project-coin-toss/docs/spec.md` |
 | **Bloodhound** (alt-edge) | **Planned** — spec only (`docs/planned/bloodhound.md`) | Not running | Start when a slot opens: Coin Toss recording done (~Oct 22) or Osprey Decision A = STOP | Calibration backtest before any money |
 | **Slot Machine** (alt-btc15) | S1 done: no strategy passed (A–D). **Reopened 2026-10-14 → R1:** read-only order-book recorder for a maker-strategy test | Laptop launchd agent, 24/7: book snapshot/s, trade tape, BTC price; ~1–3 GB/day | Maker pre-registration (rules, fill model, split, pass rule) before any analysis of the recorded data | No orders of any kind in R1. Go-live gate unchanged; A–D can't go live (failed S1) |
 
@@ -46,4 +46,6 @@
 - [x] Slot Machine: stopped at S1 (2026-10-14), then reopened the same day for the R1 recorder.
 - [ ] Slot Machine: approve the maker pre-registration before any analysis of the recorded book data
 - [ ] Laptop disk: Slot Machine's recorder adds ~1–3 GB/day (656 GB free on 2026-10-14)
-- [ ] Move `alt-arb` into `~/code/alt/` once its sessions are closed
+- [x] Local folders renamed to code names under `~/code/alt/` (2026-10-14); Osprey moved in from `~/code/alt-arb`
+- [ ] App: point the Osprey daily-refresh scheduled task's folder and the session presets at the new folders
+      (see `docs/decisions.md`, 2026-10-14 folder rename)

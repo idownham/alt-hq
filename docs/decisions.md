@@ -60,3 +60,25 @@ updating), not speed — the opposite of Osprey/Slot Machine's bot races. Mostly
 opens (Coin Toss recording done ~Oct 22, or Osprey Decision A = STOP), so in-flight projects and the Oct 25 class
 checkpoint aren't thinned. Starts with mention markets only; widens once the method is calibrated.
 **Rule carried over:** model probabilities must pass a calibration backtest on past events before any money moves.
+
+## 2026-10-14 — Local folders renamed to code names
+**Decision (Ian):** name each project's laptop folder by its code name, all under `~/code/alt/`. GitHub repo names
+don't change (remotes untouched), and the droplet path `/opt/alt-arb` doesn't change.
+
+| Old folder | New folder | Repo |
+|---|---|---|
+| `~/code/alt-arb` | `~/code/alt/project-osprey` | idownham/alt-arb |
+| `~/code/alt/alt-scalp` | `~/code/alt/project-coin-toss` | idownham/alt-scalp |
+| `~/code/alt/alt-btc15` | `~/code/alt/project-slot-machine` | idownham/alt-btc15 |
+| (already) | `~/code/alt/project-bloodhound` | idownham/alt-edge |
+
+**Why:** one tree, readable names that match the class story; Osprey was the last project outside `~/code/alt/`.
+**How (HQ session, 15:29–15:40 CT):** preflight first (all repos clean and pushed, no other sessions open, next
+Coin Toss window 18:00 CT, so none open or within 2.5 h). Unloaded both launchd agents at 15:30, moved the folders,
+recreated each `.venv` (`pip install -e '.[dev]'`; tests: Osprey 165, Coin Toss 57, Slot Machine 88 passed), updated
+each project's plist template to the new path, reinstalled and reloaded both agents at 15:31.
+**Consequence / evidence:** both agents loaded from the new paths. Slot Machine recorded fresh book snapshots within
+seconds; it logged one 69 s gap (15:30:43–15:31:51), the planned downtime. Coin Toss refreshed its schedule at
+15:31:52; no game window was open, so it lost no recording. The Osprey daily-refresh scheduled task's prompt now
+uses the new path. The app's own folder settings (the task's working folder and the session presets) are changed by
+Ian in the app. Old Claude Code sessions still point at the old folders and won't reopen there; start new ones.

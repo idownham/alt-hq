@@ -1,4 +1,4 @@
-# HQ tracks only its own files. Each project folder (alt-arb/, alt-scalp/, future ones) is its own repo.
+# HQ tracks only its own files. Each project folder (project-osprey/, project-coin-toss/, project-slot-machine/, project-bloodhound/, future ones) is its own repo.
 /*/
 !/docs/
 !/.claude/
