@@ -43,3 +43,10 @@ recorder and Slot Machine; the droplet hosts only Osprey.
 A–C lose even with generous fills, D ≈ 0. Project decision: `alt-btc15/docs/decisions.md` (same date).
 **Consequence:** the laptop runs only Coin Toss's recorder, and Kalshi reads from the laptop are Coin Toss's alone.
 Slot Machine's code and docs stay as class evidence (a valid "no edge" result).
+
+## 2026-10-14 — Slot Machine reopened for a read-only order-book recorder (R1)
+**Decision (Ian):** reopen Slot Machine (stopped at S1 earlier the same day) to record the KXBTC15M order book live,
+the first step toward testing a resting-order (maker) strategy, which S1 didn't cover. Run now on the laptop.
+Project decision: `alt-btc15/docs/decisions.md` (same date).
+**Consequence:** the laptop runs two Kalshi recorders (Coin Toss + Slot Machine), about 1.1 req/s more on the shared
+IP, still far under ~20 req/s. Slot Machine pauses on any 429 so it gives way to Coin Toss. No orders of any kind.
