@@ -50,3 +50,13 @@ the first step toward testing a resting-order (maker) strategy, which S1 didn't 
 Project decision: `alt-btc15/docs/decisions.md` (same date).
 **Consequence:** the laptop runs two Kalshi recorders (Coin Toss + Slot Machine), about 1.1 req/s more on the shared
 IP, still far under ~20 req/s. Slot Machine pauses on any 429 so it gives way to Coin Toss. No orders of any kind.
+
+## 2026-10-14 — Plan Project Bloodhound (alt-edge)
+**Idea (Ian):** find undervalued opportunities across prediction markets, starting with mention markets
+("What will Trump say?").
+**Why it's promising:** edge comes from homework (transcript base rates, rule fine print, event context, live
+updating), not speed — the opposite of Osprey/Slot Machine's bot races. Mostly retail traders.
+**Decision:** capture now as a planned project (`docs/planned/bloodhound.md`); don't start building until a slot
+opens (Coin Toss recording done ~Oct 22, or Osprey Decision A = STOP), so in-flight projects and the Oct 25 class
+checkpoint aren't thinned. Starts with mention markets only; widens once the method is calibrated.
+**Rule carried over:** model probabilities must pass a calibration backtest on past events before any money moves.

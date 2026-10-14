@@ -16,6 +16,7 @@ here apply everywhere.
 | `alt-arb/` | Project Osprey | Phase 2 data collection on the droplet; Decision A ~Oct 27 | `alt-arb/CLAUDE.md` |
 | `alt-scalp/` | Project Coin Toss | S1 recording (laptop) | `alt-scalp/CLAUDE.md` |
 | `alt-btc15/` | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (laptop)** for a future maker test | `alt-btc15/CLAUDE.md` |
+| `alt-edge/` | Project Bloodhound | **Planned** — starts when a slot opens (~Oct 22 or Osprey STOP) | `alt-edge/CLAUDE.md` (to come) |
 Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
 
 ## Portfolio-wide hard rules

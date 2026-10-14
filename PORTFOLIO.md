@@ -7,6 +7,7 @@
 |---|---|---|---|---|
 | **Osprey** (alt-arb) | Phase 2 — collecting clean data (since 2026-10-13); close-out/handoff in progress | Droplet: scanner (~4 min/scan, 626 verified markets, 8 leagues) + daily 9 am pair refresh | Decision point A, earliest ~**Oct 27** (needs 14 days clean data, ≥ 3 leagues) | GO ≥ 5 qualifying episodes/week · STOP < 1/week |
 | **Coin Toss** (alt-scalp) | S0 done, criteria confirmed; S1 recorder built | Laptop launchd agent, records each game −30 min → +20 min | 20 clean games (≥ 5 per league) by ~**Oct 22**; S2 analysis Oct 22–24 | Pre-registered in `alt-scalp/docs/spec.md` |
+| **Bloodhound** (alt-edge) | **Planned** — spec only (`docs/planned/bloodhound.md`) | Not running | Start when a slot opens: Coin Toss recording done (~Oct 22) or Osprey Decision A = STOP | Calibration backtest before any money |
 | **Slot Machine** (alt-btc15) | S1 done: no strategy passed (A–D). **Reopened 2026-10-14 → R1:** read-only order-book recorder for a maker-strategy test | Laptop launchd agent, 24/7: book snapshot/s, trade tape, BTC price; ~1–3 GB/day | Maker pre-registration (rules, fill model, split, pass rule) before any analysis of the recorded data | No orders of any kind in R1. Go-live gate unchanged; A–D can't go live (failed S1) |
 
 ## Results
