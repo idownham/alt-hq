@@ -137,7 +137,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h1>Alt Projects Briefing</h1>
   <p class="lede">Four small experiments that each ask one question: <strong>can a careful student find a real, repeatable edge in prediction markets</strong>, or are the prices already fair? Everything is test-and-measure. No real money is being traded.</p>
   <div class="stamp">
-    <span>Last updated: Wed Oct 14, 2026 · 7:05 pm CT</span>
+    <span>Last updated: Thu Oct 15, 2026 · 11:15 am CT</span>
     <span>Source: the four project folders + HQ</span>
   </div>
   <div class="rule-box">
@@ -149,13 +149,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
 <section class="stack" aria-labelledby="h-now">
   <span class="eyebrow">Right now</span>
   <h2 id="h-now">Is everything running?</h2>
-  <p class="muted">From the latest health check (6:40 pm CT) and a look at tonight's recordings.</p>
+  <p class="muted">Checked Thu Oct 15 at about 11:10 am CT.</p>
   <div class="health">
-    <div class="hrow"><span class="what">Osprey's robot (cloud server)</span><span class="note">Checked prices 3 min before the check. 0 errors in the last hour.</span><span class="pill good">Running</span></div>
-    <div class="hrow"><span class="what">Osprey's 9 am market list update</span><span class="note">Ran this morning and added 91 games.</span><span class="pill good">Done today</span></div>
-    <div class="hrow"><span class="what">Coin Toss game recorder (laptop)</span><span class="note">Montreal vs Washington recorded cleanly. Dallas vs Colorado is recording now.</span><span class="pill good">Recording</span></div>
-    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (laptop)</span><span class="note">Recording every second. The internet dropped from about 5:30 to 6:00 pm and it lost that half hour. It recovered by itself.</span><span class="pill warn">Running, had a gap</span></div>
-    <div class="hrow"><span class="what">Laptop</span><span class="note">Plenty of disk space (657 GB free). It was on battery during a game recording. Keep it plugged in.</span><span class="pill warn">Plug in</span></div>
+    <div class="hrow"><span class="what">Laptop staying awake</span><span class="note">On battery, and it slept most of last night and this morning. Both laptop recorders stop while it sleeps.</span><span class="pill bad">Keeps sleeping</span></div>
+    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (laptop)</span><span class="note">It's running, but since 7 pm last night it captured only about 16% of the seconds it should have. That's about 13 hours of gaps, almost all while the laptop was asleep.</span><span class="pill bad">Losing data</span></div>
+    <div class="hrow"><span class="what">Coin Toss game recorder (laptop)</span><span class="note">Last night's practice: Montreal vs Washington was clean. Dallas vs Colorado wasn't: the lid was closed on battery and the Mac slept for 8 minutes mid-game.</span><span class="pill warn">Works, needs laptop awake</span></div>
+    <div class="hrow"><span class="what">Osprey's robot (cloud server)</span><span class="note">Working: it finished a scan of 327 games at 11:03 am. Scans now take about 8 minutes. Its own health check wrongly said "no scans" because the database was busy when it looked.</span><span class="pill warn">Running, check is wrong</span></div>
+    <div class="hrow"><span class="what">Osprey's 9 am market list update</span><span class="note">Ran at 9:12 this morning and added 34 games (22 NBA, 8 NHL, 4 college football).</span><span class="pill good">Done today</span></div>
     <div class="hrow"><span class="what">Bloodhound</span><span class="note">Research only so far. Nothing is supposed to be running yet.</span><span class="pill idle">Not running</span></div>
   </div>
 </section>
@@ -184,7 +184,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
     <div class="cols">
       <div>
         <h4>What's happening</h4>
-        <p>A robot on a rented cloud server compares 281 matched games on Kalshi and Polymarket about every 4 minutes. Every morning at 9, a task on the laptop adds newly listed games.</p>
+        <p>A robot on a rented cloud server compares 327 matched games on Kalshi and Polymarket. One full check now takes about 8 minutes, up from about 4, because more games have been added. Every morning at 9, a task on the laptop adds newly listed games.</p>
       </div>
       <div>
         <h4>Early signal (not a conclusion)</h4>
@@ -205,7 +205,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-coin">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 2 · repo alt-scalp</span><h3 id="h-coin">Coin Toss</h3></div>
-      <span class="pill good">Test recordings</span>
+      <span class="pill warn">Test recordings</span>
     </div>
     <p class="idea">Right around kickoff, do prices wiggle back and forth enough for a patient "shopkeeper" to earn the gap between buying and selling?</p>
     <p class="analogy">A shopkeeper posts a buy price (48¢) and a sell price (51¢) and earns the 3¢ difference each time someone trades both ways. The danger: the one time a team scores, everyone trades with you at the wrong price.</p>
@@ -223,7 +223,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <div>
         <h4>Progress</h4>
         <p class="mono">Counted: 0 / 20 clean games (need ≥ 5 per league)</p>
-        <p>Practice nights: Oct 13 had 9 clean games out of 16. The other 7 were lost because the laptop slept with the lid closed. Tonight: 1 clean so far, 1 recording.</p>
+        <p>Practice nights: Oct 13 had 9 clean games out of 16. The other 7 were lost because the laptop slept with the lid closed. Oct 14 had 1 clean game out of 2. The other was lost for the same reason.</p>
       </div>
       <div>
         <h4>Early signal (practice games only)</h4>
@@ -240,7 +240,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-slot">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 3 · repo alt-btc15</span><h3 id="h-slot">Slot Machine</h3></div>
-      <span class="pill warn">Recording (round 2)</span>
+      <span class="pill bad">Recording, losing data</span>
     </div>
     <p class="idea">Kalshi runs a new "Will Bitcoin be up or down?" market every 15 minutes. Is there a way to beat it?</p>
     <p class="analogy">Round 1 tried to beat it by grabbing prices that were already posted. That failed. Round 2 tries the shopkeeper approach instead: post your own prices and wait for people to come to you.</p>
@@ -257,11 +257,11 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       </div>
       <div>
         <h4>What's happening</h4>
-        <p>The laptop records the full list of buy and sell offers every second, 24/7, until <strong>Oct 28</strong>. That's about 1.4 GB a day. Nobody looks at the results until then, so the test stays fair.</p>
+        <p>The laptop records the full list of buy and sell offers every second, 24/7, until <strong>Oct 28</strong>. It's about 0.8 GB so far. Nobody looks at the results until then, so the test stays fair.</p>
       </div>
       <div>
-        <h4>Today's fixes</h4>
-        <p>The recorder was running slightly slow (57 snapshots a minute instead of 60). That would have failed the "95% complete" rule, so it was fixed at 6:40 pm and is now exactly 60. The internet outage this evening shows up as a gap in the data.</p>
+        <h4>Problem right now</h4>
+        <p>A 15-minute window only counts if at least 95% of it was recorded. Since 7 pm last night the laptop was mostly asleep, so only about 16% got recorded. Most of those windows won't count. If too few count by Oct 28, the rules push the end date back. The real fix is a laptop that stays plugged in and awake around the clock, or a small server. That decision belongs to the Slot Machine chat. (On Oct 14 the timing was also fixed, from 57 snapshots a minute to exactly 60.)</p>
       </div>
     </div>
     <div class="gate">
@@ -309,7 +309,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Your list</span>
   <h2 id="h-todo">What's waiting on you</h2>
   <ul class="todo">
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Keep the laptop plugged in with the lid open during game nights.</strong><div class="why">Coin Toss lost 7 practice games on Oct 13 to sleep. Counted games start Fri Oct 17.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Plug the laptop in and keep the lid open, all day and night.</strong><div class="why">Slot Machine records 24/7, so it needs the laptop awake around the clock, not just on game nights. Last night it caught only 16%. Coin Toss's counted games start Fri Oct 17.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>In the Slot Machine chat: decide how to keep its recorder running 24/7</strong> (laptop always awake, or a small server).<div class="why">Without that, most of its windows won't meet the 95% rule.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>In the Osprey chat: fix its health check</strong> so a busy database doesn't show up as "no scans".</div></li>
     <li><span class="box" aria-hidden="true"></span><div><strong>Class checkpoint 1: record the 1–2 min progress video, then submit the concept brief yourself.</strong><div class="why">The shot plan is in docs/class/01-progress-video-plan.md. After recording, add the video to the capture list in the journal.</div></div></li>
     <li><span class="box" aria-hidden="true"></span><div><strong>Write your verdict on the AI-drafted concept brief</strong> (accepted, revised or rejected, and why).<div class="why">It's the last row of the AI log in docs/journal.md.</div></div></li>
     <li><span class="box" aria-hidden="true"></span><div><strong>In the Claude app: delete the old folder presets</strong> (alt-arb, alt-scalp, alt-btc15) and check that Osprey's 9 am task points at the new project-osprey folder.</div></li>
@@ -322,8 +324,8 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Calendar</span>
   <h2 id="h-dates">What's coming up</h2>
   <ol class="timeline">
-    <li class="today"><span class="d">Oct 14</span><span class="t">Today. Slot Machine recorder fixed, Bloodhound rules confirmed, Coin Toss practice night.</span></li>
-    <li><span class="d">Oct 15–16</span><span class="t">Coin Toss: more practice recordings (hockey).</span></li>
+    <li><span class="d">Oct 14</span><span class="t">Slot Machine recorder timing fixed, Bloodhound rules confirmed, Coin Toss practice night.</span></li>
+    <li class="today"><span class="d">Oct 15–16</span><span class="t">Today. Coin Toss: more practice recordings (hockey).</span></li>
     <li><span class="d">Oct 17–19</span><span class="t">Coin Toss: counted recordings begin (NHL Sat/Sun, NFL Sun + Mon).</span></li>
     <li><span class="d">Oct 20–22</span><span class="t">Coin Toss: NBA opening week. Target of 20 clean games by Oct 22.</span></li>
     <li><span class="d">Oct 22–24</span><span class="t">Coin Toss: first analysis (S2).</span></li>
@@ -341,12 +343,21 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h2 id="h-changes">What changed recently</h2>
   <div class="changes">
     <div class="change">
+      <span class="when">Oct 15 · morning</span>
+      <ul class="plain">
+        <li>The laptop was on battery and slept most of the night. <strong>Slot Machine</strong> captured only about 16% of the seconds since 7 pm.</li>
+        <li><strong>Coin Toss</strong> practice: 1 of 2 games clean. The other was lost when the lid was closed for 8 minutes.</li>
+        <li><strong>Osprey</strong> now watches 327 games. Its 9 am update added 34, including the first NBA games. Its health check gave a false alarm.</li>
+        <li>Correction: the Oct 14 evening gap that was first reported as an internet outage happened while the laptop was asleep with the lid closed (it woke at 5:59 pm).</li>
+      </ul>
+    </div>
+    <div class="change">
       <span class="when">Oct 14 · evening</span>
       <ul class="plain">
         <li><strong>Bloodhound</strong> finished its research and you confirmed its rules (Trump decides, Vance is a side result, 5-contract paper trades). It's allowed to read Roll Call's transcript site slowly, for research only.</li>
         <li><strong>Slot Machine</strong>'s recorder timing was fixed. You approved the round-2 test plan and its 7 clarifications before any data was looked at.</li>
         <li><strong>Coin Toss</strong> recorded its first practice game since the folder move, and it was clean.</li>
-        <li>An internet outage around 5:30–6:00 pm cut into Slot Machine's recording. No Coin Toss game was on at the time.</li>
+        <li>A gap around 5:30–6:00 pm cut into Slot Machine's recording (later traced to the laptop sleeping). No Coin Toss game was on at the time.</li>
       </ul>
     </div>
     <div class="change">
@@ -357,15 +368,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
         <li>Class checkpoint 1 concept brief written (late). Shared journal started.</li>
       </ul>
     </div>
-    <div class="change">
-      <span class="when">Oct 13</span>
-      <ul class="plain">
-        <li>Osprey moved to a cloud server and began collecting clean data. Its go/stop rules were written down first.</li>
-        <li>Coin Toss rules confirmed. The recorder was built and ran its first practice night.</li>
-        <li>Slot Machine started, after your manual $5 trade.</li>
-      </ul>
     </div>
-  </div>
 </section>
 
 <section class="stack" aria-labelledby="h-terms">
