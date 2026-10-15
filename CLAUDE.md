@@ -16,8 +16,12 @@ here apply everywhere.
 | `project-osprey/` (repo alt-arb) | Project Osprey | Phase 2 data collection on the droplet; Decision A ~Oct 27 | `project-osprey/CLAUDE.md` |
 | `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | S1 recording (laptop) | `project-coin-toss/CLAUDE.md` |
 | `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (laptop)** for a future maker test | `project-slot-machine/CLAUDE.md` |
-| `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **S0 started early 2026-10-14** (owner decision): read-only research only, no running services until a slot opens (~Oct 22 or Osprey STOP); criteria v2 proposed, awaiting Ian | `project-bloodhound/CLAUDE.md` |
+| `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **S0 started early 2026-10-14** (owner decision): read-only research only, no running services until a slot opens (~Oct 22 or Osprey STOP); criteria v2 confirmed 2026-10-14 | `project-bloodhound/CLAUDE.md` |
 Local folders use code names (renamed 2026-10-14); GitHub repo names are unchanged. Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
+
+**Status site (HQ sessions only):** Ian's plain-English briefing page is `docs/site/index.html`, published as a private
+artifact at https://claude.ai/artifact/XwdudFFr5dSPQYsat1kzHS. **Every HQ chat refreshes it** with the `/update-site`
+skill (before the wrap-up commit), and so does any time Ian asks. Project sessions don't touch it.
 
 ## Portfolio-wide hard rules
 1. **No live trading in any project** (Slot Machine included: $5/trade, $25/day, $100 total caps) without an explicit, dated owner decision recorded in that project's
@@ -34,7 +38,7 @@ Local folders use code names (renamed 2026-10-14); GitHub repo names are unchang
 ## Shared resources — don't starve each other
 | Resource | Who uses it | Where from |
 |---|---|---|
-| Kalshi public REST (Basic ≈ 20 req/s per key/IP) | Osprey scanner; Coin Toss recorder; Slot Machine recorder (~1.1 req/s); Bloodhound occasional one-off reads (≤ 1 req/s, 10 s back-off on 429) | Droplet; laptop; laptop; laptop |
+| Kalshi public REST (Basic ≈ 20 req/s per key/IP) | Osprey scanner; Coin Toss recorder; Slot Machine recorder (~1.1 req/s); Bloodhound occasional one-off reads (≤ 1 req/s, 10 s back-off on 429; also reads rollcall.com transcripts ≤ 1 page/2 s, cached) | Droplet; laptop; laptop; laptop |
 | Polymarket US public REST (~30 req/min **per IP**, then 10 s block) | Osprey only | Droplet |
 - Coin Toss must not call Polymarket from the droplet. Any new project that needs Polymarket must run from a
   different IP or coordinate with Osprey first.

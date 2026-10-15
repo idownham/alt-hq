@@ -50,6 +50,8 @@ Work: `/health` board, and folders renamed to code names. Concept brief written 
 **2026-10-14 (evening) · Portfolio · HQ**
 Work: `/health` at 18:40 CT was 🟡 (laptop on battery during a Coin Toss window; Slot Machine lost ~25 min to a network/DNS drop, 17:26–17:59, outside any Coin Toss window). Checked all four project sessions; all healthy. Recorded Bloodhound's early S0 start in `PORTFOLIO.md`, `CLAUDE.md` and `docs/decisions.md`.
 Decision: Ian approved the HQ updates; criteria v2 stays *proposed*, and the rollcall.com source isn't listed until Ian answers Q4.
+Later the same evening Bloodhound recorded Ian's answers (5db3067: criteria v2 confirmed, Factbase allowed with limits), so HQ now says confirmed and lists rollcall.com.
+Work: built a plain-English status site for Ian (`docs/site/index.html`, private artifact) plus an `/update-site` skill. It is refreshed in every HQ chat.
 
 ---
 

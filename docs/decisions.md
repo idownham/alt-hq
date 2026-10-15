@@ -95,3 +95,11 @@ answer; the draft gate (beat the closing-price Brier) is replaced in the *propos
 before the scheduled start, plus a ≥ 30-event minimum. Not confirmed — awaiting Ian (Q1–Q9).
 **Consequence:** Bloodhound is added to the shared-resources table as an occasional laptop reader of Kalshi public
 REST. Reading rollcall.com (Factbase) transcripts is pending Ian's answer to Q4 and isn't listed yet.
+
+## 2026-10-14 — Plain-English status site, refreshed every HQ chat
+**Decision (Ian):** keep a non-technical briefing website covering all projects, updated in every HQ chat or when
+Ian asks. Source `docs/site/index.html`; published as a private Claude artifact
+(https://claude.ai/artifact/XwdudFFr5dSPQYsat1kzHS). Refresh procedure: `.claude/skills/update-site/SKILL.md`.
+**Why:** one place Ian can follow everything without reading four repos.
+**Rules:** facts come only from each project's own docs and the latest `/health`; early signals stay labeled as not
+conclusions; no keys, account details or `.env` content on the page. The page is private; Ian decides any sharing.
