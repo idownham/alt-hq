@@ -103,3 +103,23 @@ Ian asks. Source `docs/site/index.html`; published as a private Claude artifact
 **Why:** one place Ian can follow everything without reading four repos.
 **Rules:** facts come only from each project's own docs and the latest `/health`; early signals stay labeled as not
 conclusions; no keys, account details or `.env` content on the page. The page is private; Ian decides any sharing.
+
+## 2026-10-15 — One shared server: resize Osprey's droplet and move both laptop recorders onto it
+**Decision (Ian):** don't buy a separate server for Slot Machine. Resize the existing DigitalOcean droplet `alt-arb`
+(Ian does this himself in the control panel) and run Osprey, Coin Toss and Slot Machine's recorders on it, so none of
+them depend on the laptop being awake.
+**Evidence:** the laptop slept on battery from 20:11 Oct 14 to 09:03 Oct 15. Slot Machine captured only ~16% of the
+seconds since 19:00, and Coin Toss lost DAL@COL to a lid-close sleep. The droplet (1 vCPU, 1 GB RAM, 25 GB disk,
+~$6/mo, sfo2) was nearly idle: load 0.00, ~350 MB RAM used, scanner ~36 MB. Ian's panel showed memory 38.6% and CPU 1.29%.
+The two laptop recorders use ~30–43 MB RAM each and almost no CPU. **Disk is the constraint:** Slot Machine records
+~1.4 GB/day at full coverage (21 GB free on the droplet), and Coin Toss ~6 MB/game.
+**Target size:** Basic Regular, 1 vCPU / 2 GB / 50 GB SSD (~$12/mo, replacing the $6 plan). The disk increase is
+permanent (it can't be shrunk back).
+**Constraints kept:** read-only, no keys on this server. Only Osprey calls Polymarket (per-IP limit). All Kalshi
+public reads now share one IP, still well under ~20 req/s (estimate; each project confirms its own peak). A future
+live phase still needs its own server and keys. Each project gets its own Linux user, folder and systemd unit, set up
+in that project's own session.
+**Consequence:** a short Osprey scanner gap during the resize (power off/on), to be logged in Osprey's journal. Coin
+Toss should move before counted games start Oct 17 (the Oct 15–16 test games can be the server trial). Slot Machine
+moves mid-way through its R1 range; the host change and any overlap or gap are logged, and the pre-registered rules
+don't change. Osprey's 9 am refresh stays a laptop scheduled task for now.

@@ -46,6 +46,7 @@
 - [x] Slot Machine: stopped at S1 (2026-10-14), then reopened the same day for the R1 recorder.
 - [x] Slot Machine: maker pre-registration approved as written, plus clarifications 1–7 (2026-10-14)
 - [x] Bloodhound: answered Q1–Q9; criteria v2 confirmed (2026-10-14)
+- [ ] Resize droplet `alt-arb` to Basic 1 vCPU / 2 GB / 50 GB (~$12/mo); then Coin Toss and Slot Machine move their recorders onto it (docs/decisions.md 2026-10-15)
 - [ ] Laptop disk: Slot Machine's recorder adds ~1–3 GB/day (656 GB free on 2026-10-14)
 - [x] Local folders renamed to code names under `~/code/alt/` (2026-10-14); Osprey moved in from `~/code/alt-arb`
 - [ ] App: point the Osprey daily-refresh scheduled task's folder and the session presets at the new folders

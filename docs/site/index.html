@@ -137,7 +137,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h1>Alt Projects Briefing</h1>
   <p class="lede">Four small experiments that each ask one question: <strong>can a careful student find a real, repeatable edge in prediction markets</strong>, or are the prices already fair? Everything is test-and-measure. No real money is being traded.</p>
   <div class="stamp">
-    <span>Last updated: Thu Oct 15, 2026 · 11:15 am CT</span>
+    <span>Last updated: Thu Oct 15, 2026 · 1:00 pm CT</span>
     <span>Source: the four project folders + HQ</span>
   </div>
   <div class="rule-box">
@@ -261,7 +261,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       </div>
       <div>
         <h4>Problem right now</h4>
-        <p>A 15-minute window only counts if at least 95% of it was recorded. Since 7 pm last night the laptop was mostly asleep, so only about 16% got recorded. Most of those windows won't count. If too few count by Oct 28, the rules push the end date back. The real fix is a laptop that stays plugged in and awake around the clock, or a small server. That decision belongs to the Slot Machine chat. (On Oct 14 the timing was also fixed, from 57 snapshots a minute to exactly 60.)</p>
+        <p>A 15-minute window only counts if at least 95% of it was recorded. Since 7 pm last night the laptop was mostly asleep, so only about 16% got recorded. Most of those windows won't count. If too few count by Oct 28, the rules push the end date back. The fix: on Oct 15 you decided to move it to the shared cloud server, which doesn't sleep. (On Oct 14 the timing was also fixed, from 57 snapshots a minute to exactly 60.)</p>
       </div>
     </div>
     <div class="gate">
@@ -309,8 +309,8 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Your list</span>
   <h2 id="h-todo">What's waiting on you</h2>
   <ul class="todo">
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Plug the laptop in and keep the lid open, all day and night.</strong><div class="why">Slot Machine records 24/7, so it needs the laptop awake around the clock, not just on game nights. Last night it caught only 16%. Coin Toss's counted games start Fri Oct 17.</div></div></li>
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>In the Slot Machine chat: decide how to keep its recorder running 24/7</strong> (laptop always awake, or a small server).<div class="why">Without that, most of its windows won't meet the 95% rule.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Until the move: keep the laptop plugged in with the lid open.</strong><div class="why">Being open isn't enough on battery. It sleeps after a minute of no use. Last night Slot Machine caught only 16%.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Upgrade the cloud server (DigitalOcean droplet "alt-arb")</strong> to the $12/month size: 1 CPU, 2 GB memory, 50 GB disk.<div class="why">You decided all three recorders will share this one server, so they keep running when the laptop is off. After that, Coin Toss and Slot Machine each move onto it from their own chats. Coin Toss should move before Fri Oct 17.</div></div></li>
     <li><span class="box" aria-hidden="true"></span><div><strong>In the Osprey chat: fix its health check</strong> so a busy database doesn't show up as "no scans".</div></li>
     <li><span class="box" aria-hidden="true"></span><div><strong>Class checkpoint 1: record the 1–2 min progress video, then submit the concept brief yourself.</strong><div class="why">The shot plan is in docs/class/01-progress-video-plan.md. After recording, add the video to the capture list in the journal.</div></div></li>
     <li><span class="box" aria-hidden="true"></span><div><strong>Write your verdict on the AI-drafted concept brief</strong> (accepted, revised or rejected, and why).<div class="why">It's the last row of the AI log in docs/journal.md.</div></div></li>
@@ -343,8 +343,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h2 id="h-changes">What changed recently</h2>
   <div class="changes">
     <div class="change">
-      <span class="when">Oct 15 · morning</span>
+      <span class="when">Oct 15</span>
       <ul class="plain">
+        <li><strong>Decision:</strong> one shared cloud server instead of a second one. Osprey's server gets upgraded (about $12/month instead of $6) and Coin Toss and Slot Machine move onto it, so nothing depends on the laptop. The server was barely busy (memory about 39%, CPU about 1%). Disk space was the only thing it was short on.</li>
         <li>The laptop was on battery and slept most of the night. <strong>Slot Machine</strong> captured only about 16% of the seconds since 7 pm.</li>
         <li><strong>Coin Toss</strong> practice: 1 of 2 games clean. The other was lost when the lid was closed for 8 minutes.</li>
         <li><strong>Osprey</strong> now watches 327 games. Its 9 am update added 34, including the first NBA games. Its health check gave a false alarm.</li>
