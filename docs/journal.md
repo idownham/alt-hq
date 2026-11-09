@@ -53,6 +53,22 @@ Decision: Ian approved the HQ updates; criteria v2 stays *proposed*, and the rol
 Later the same evening Bloodhound recorded Ian's answers (5db3067: criteria v2 confirmed, Factbase allowed with limits), so HQ now says confirmed and lists rollcall.com.
 Work: built a plain-English status site for Ian (`docs/site/index.html`, private artifact) plus an `/update-site` skill. It is refreshed in every HQ chat.
 
+**2026-10-15 · Osprey · [569ba4e](https://github.com/idownham/alt-arb/commit/569ba4e), [ef072f8](https://github.com/idownham/alt-arb/commit/ef072f8)**
+**Iteration (false alarm → decision):** HQ saw Osprey's health check say "no scans" while the scanner was fine. The
+database was locked during each long scan. Fix: report "couldn't read DB", then switch the scan log to WAL mode so
+reads never wait. Also, the 9 am refresh had silently stopped after the folder move. Its scheduled task was recreated in the new folder (Osprey journal).
+
+**2026-10-28 · Osprey Decision A = STOP · [ae52199](https://github.com/idownham/alt-arb/commit/ae52199)**
+**Iteration (pre-registered result → decision):** 15.2 days, 8 leagues, 0 qualifying episodes (bar: ≥ 1/week to avoid
+STOP). The largest pre-game gap was $2.33 against a $20 bar. Consequence: no paper or live phase. Osprey becomes a finished
+"no edge" result, and Bloodhound's slot opens.
+
+**2026-11-08 · Portfolio · shared server · Coin Toss [014c442](https://github.com/idownham/alt-scalp/commit/014c442), Slot Machine [918700b](https://github.com/idownham/alt-btc15/commit/918700b), Osprey [6ed9370](https://github.com/idownham/alt-arb/commit/6ed9370)**
+**Iteration (evidence → decision → consequence):** laptop sleep kept costing data (Slot Machine coverage swung from
+~1% to 98% of a day; 168 of 365 Coin Toss windows not clean) → Ian resized the droplet to 2 GB / 50 GB ($12/mo) →
+both recorders now run on it under their own users. Cutovers are logged in each project. This HQ chat did the moves
+and caught up every journal at Ian's request (HQ decisions 2026-11-08).
+
 ---
 
 ## AI log
@@ -63,6 +79,8 @@ Work: built a plain-English status site for Ian (`docs/site/index.html`, private
 | 10-13 | Claude Code · S2 analysis | build the reversal detector, run on test games | Detector + finding that a goal jump counted as noise | **Revised:** Ian chose to exclude jumps in either direction | [d5876bb](https://github.com/idownham/alt-scalp/commit/d5876bb), [70cbfcf](https://github.com/idownham/alt-scalp/commit/70cbfcf) |
 | 10-14 | Claude Code · R1 maker pre-registration | draft the test before any data | Draft + 4 optional changes flagged | **Accepted as written**, declining the 4 optional changes | [8f98e28](https://github.com/idownham/alt-btc15/commit/8f98e28) |
 | 10-14 | Claude Code · concept brief | draft the Oct 11 brief from the repos | This checkpoint's brief | *Ian to fill in: accepted / revised / rejected* | `docs/class/01-concept-brief.md` |
+| 10-28 | Claude Code · Osprey Decision A | "Yes, record STOP" | Report + episode/error queries; STOP entry with the biases listed | **Accepted** STOP without changing criteria | [ae52199](https://github.com/idownham/alt-arb/commit/ae52199) |
+| 11-08 | Claude Code (HQ chat) · server move + records | "Can you go move everything, update everything, and then backlog everything into github" | Both recorders deployed on the droplet; journals, decisions, portfolio and site updated from logs and data | **Accepted** the $12 plan (chose it over $18). *Ian to fill in on the rest* | HQ decisions 2026-11-08 |
 
 *Exact prompts weren't saved for the early entries; excerpts are paraphrased from the commits. From now on, paste a
 one-line real excerpt.*

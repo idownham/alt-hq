@@ -123,3 +123,26 @@ in that project's own session.
 Toss should move before counted games start Oct 17 (the Oct 15–16 test games can be the server trial). Slot Machine
 moves mid-way through its R1 range; the host change and any overlap or gap are logged, and the pre-registered rules
 don't change. Osprey's 9 am refresh stays a laptop scheduled task for now.
+
+## 2026-10-28 — Osprey STOP opens Bloodhound's slot
+**Decision (Ian, in an Osprey session):** Decision point A = STOP (`project-osprey/docs/decisions.md` 2026-10-28,
+ae52199): 0 qualifying episodes in 15.2 days / 8 leagues. **Consequence:** per the 2026-10-14 Bloodhound plan, a
+slot is open for Bloodhound S1. Osprey's scanner keeps running until Ian decides to shut it down.
+*(Recorded in HQ on 2026-11-08.)*
+
+## 2026-11-08 — Droplet resized; Coin Toss and Slot Machine recorders moved onto it
+**Evidence:** the laptop kept sleeping. Slot Machine's logged gaps add up to ~3–20 h a day since Oct 31, and 168 of
+Coin Toss's 365 counted windows (since Oct 17) are not clean.
+**Decision (Ian, 2026-11-08):** Ian resized `alt-arb` to Basic 1 vCPU / 2 GB / 50 GB ($12/mo; the disk change is permanent)
+and asked this HQ chat to do the moves and all the record-keeping across projects. That's an owner-requested exception to
+"each project sets up its own move in its own session" (2026-10-15) and to the "stay in your lane" rule, for this
+session only.
+**Consequence:**
+- Verified after the resize: 2 GB RAM, a 48 GB filesystem (44 GB free), the clock synced, the Osprey scanner active.
+  Osprey's scan log had a gap of ~4 min.
+- Slot Machine (`alt-btc15-recorder`, user `altbtc15`) started 2026-11-09 04:38 UTC. Coin Toss (`altscalp-recorder`,
+  user `altscalp`, plus `altscalp-update.timer` and chrony) started 04:40 UTC. Both were installed from git bundles because
+  the repos are private and no deploy keys existed. Their remotes point at GitHub, and read-only deploy keys were
+  generated for Ian to add.
+- Cutovers and overlaps are logged in each project's journal and decisions. Laptop data is kept as is.
+- The Osprey daily refresh stays a laptop scheduled task.

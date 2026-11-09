@@ -13,9 +13,9 @@ here apply everywhere.
 ## Projects
 | Folder | Code name | Status / stage | Own rules |
 |---|---|---|---|
-| `project-osprey/` (repo alt-arb) | Project Osprey | Phase 2 data collection on the droplet; Decision A ~Oct 27 | `project-osprey/CLAUDE.md` |
-| `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | S1 recording (laptop) | `project-coin-toss/CLAUDE.md` |
-| `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (laptop)** for a future maker test | `project-slot-machine/CLAUDE.md` |
+| `project-osprey/` (repo alt-arb) | Project Osprey | **Close-out: Decision A = STOP (2026-10-28)**; scanner still running pending owner decision | `project-osprey/CLAUDE.md` |
+| `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | S1 recording (**droplet since 2026-11-09**); S2 analysis overdue | `project-coin-toss/CLAUDE.md` |
+| `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (droplet since 2026-11-09)** for a future maker test | `project-slot-machine/CLAUDE.md` |
 | `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **S0 started early 2026-10-14** (owner decision): read-only research only, no running services until a slot opens (~Oct 22 or Osprey STOP); criteria v2 confirmed 2026-10-14 | `project-bloodhound/CLAUDE.md` |
 Local folders use code names (renamed 2026-10-14); GitHub repo names are unchanged. Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
 
@@ -38,18 +38,21 @@ skill (before the wrap-up commit), and so does any time Ian asks. Project sessio
 ## Shared resources — don't starve each other
 | Resource | Who uses it | Where from |
 |---|---|---|
-| Kalshi public REST (Basic ≈ 20 req/s per key/IP) | Osprey scanner; Coin Toss recorder; Slot Machine recorder (~1.1 req/s); Bloodhound occasional one-off reads (≤ 1 req/s, 10 s back-off on 429; also reads rollcall.com transcripts ≤ 1 page/2 s, cached) | Droplet; laptop; laptop; laptop |
+| Kalshi public REST (Basic ≈ 20 req/s per key/IP) | Osprey scanner; Coin Toss recorder; Slot Machine recorder (~1.1 req/s); Bloodhound occasional one-off reads (≤ 1 req/s, 10 s back-off on 429; also reads rollcall.com transcripts ≤ 1 page/2 s, cached) | Droplet (one shared IP for the first three since 2026-11-09); laptop for Bloodhound |
 | Polymarket US public REST (~30 req/min **per IP**, then 10 s block) | Osprey only | Droplet |
 - Coin Toss must not call Polymarket from the droplet. Any new project that needs Polymarket must run from a
   different IP or coordinate with Osprey first.
-- Slot Machine's R1 recorder runs 24/7 on the laptop next to Coin Toss's recorder: ~1 book request/s plus paced
-  trade slices, and a 10 s pause on any 429 so it gives way to Coin Toss. Read-only, no keys. Any live phase still
-  needs its own server and keys.
-- Running services: Osprey scanner + 15-min update timer (DigitalOcean droplet `alt-arb`, systemd, `/opt/alt-arb`);
-  Osprey daily pair refresh (laptop, Claude desktop scheduled task, 9 am, runs in `~/code/alt/project-osprey`);
-  Coin Toss recorder (laptop, launchd, runs from `~/code/alt/project-coin-toss` — **don't move that folder** without
-  reinstalling the launchd agent); Slot Machine recorder (laptop, launchd `com.idownham.slot.recorder`, runs from
-  `~/code/alt/project-slot-machine`; same rule). Moving a folder also means updating the scheduled task's folder.
+- Since 2026-11-09 the droplet `alt-arb` (1 vCPU / 2 GB / 50 GB, resized 2026-11-08) runs all three recorders/scanners,
+  each with its own Linux user, `/opt` folder and systemd unit. Read-only, no keys. Slot Machine keeps ~1 book request/s,
+  paced trade slices and a 10 s pause on any 429. Any live phase still needs its own server and keys.
+- Running services: **droplet** — Osprey scanner + 15-min update timer (`altarb-scanner`, user `altarb`, `/opt/alt-arb`);
+  Coin Toss recorder + 15-min update timer (`altscalp-recorder`, user `altscalp`, `/opt/alt-scalp`); Slot Machine recorder
+  (`alt-btc15-recorder`, user `altbtc15`, `/opt/alt-btc15`). The Coin Toss and Slot Machine copies were installed from git
+  bundles; they pull from GitHub once their read-only deploy keys are added. **Laptop** — Osprey daily pair refresh (Claude
+  desktop scheduled task, 9 am, runs in `~/code/alt/project-osprey`); Coin Toss's launchd agent as a backup until the first
+  server window is verified (then unloaded). Moving a project folder also means updating that scheduled task's folder
+  (recreate the task; see Osprey's journal 2026-10-15).
+- Disk: Slot Machine's tape grows ~1.0–1.5 GB/day on the droplet; check `df -h /` in health checks (alert under 5 GB free).
 
 ## Class evidence (applies to every project)
 - Each project keeps `docs/journal.md`: dated entries with work, commit links, observation/test, decision, and

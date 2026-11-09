@@ -137,7 +137,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h1>Alt Projects Briefing</h1>
   <p class="lede">Four small experiments that each ask one question: <strong>can a careful student find a real, repeatable edge in prediction markets</strong>, or are the prices already fair? Everything is test-and-measure. No real money is being traded.</p>
   <div class="stamp">
-    <span>Last updated: Thu Oct 15, 2026 · 1:00 pm CT</span>
+    <span>Last updated: Sun Nov 8, 2026 · about 11:15 pm CT</span>
     <span>Source: the four project folders + HQ</span>
   </div>
   <div class="rule-box">
@@ -149,14 +149,14 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
 <section class="stack" aria-labelledby="h-now">
   <span class="eyebrow">Right now</span>
   <h2 id="h-now">Is everything running?</h2>
-  <p class="muted">Checked Thu Oct 15 at about 11:10 am CT.</p>
+  <p class="muted">Checked Sun Nov 8, about 10:30–11:15 pm CT.</p>
   <div class="health">
-    <div class="hrow"><span class="what">Laptop staying awake</span><span class="note">On battery, and it slept most of last night and this morning. Both laptop recorders stop while it sleeps.</span><span class="pill bad">Keeps sleeping</span></div>
-    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (laptop)</span><span class="note">It's running, but since 7 pm last night it captured only about 16% of the seconds it should have. That's about 13 hours of gaps, almost all while the laptop was asleep.</span><span class="pill bad">Losing data</span></div>
-    <div class="hrow"><span class="what">Coin Toss game recorder (laptop)</span><span class="note">Last night's practice: Montreal vs Washington was clean. Dallas vs Colorado wasn't: the lid was closed on battery and the Mac slept for 8 minutes mid-game.</span><span class="pill warn">Works, needs laptop awake</span></div>
-    <div class="hrow"><span class="what">Osprey's robot (cloud server)</span><span class="note">Working: it finished a scan of 327 games at 11:03 am. Scans now take about 8 minutes. Its own health check wrongly said "no scans" because the database was busy when it looked.</span><span class="pill warn">Running, check is wrong</span></div>
-    <div class="hrow"><span class="what">Osprey's 9 am market list update</span><span class="note">Ran at 9:12 this morning and added 34 games (22 NBA, 8 NHL, 4 college football).</span><span class="pill good">Done today</span></div>
-    <div class="hrow"><span class="what">Bloodhound</span><span class="note">Research only so far. Nothing is supposed to be running yet.</span><span class="pill idle">Not running</span></div>
+    <div class="hrow"><span class="what">Cloud server ("alt-arb")</span><span class="note">Upgraded tonight to the $12/month size: 2 GB memory, 50 GB disk (44 GB free). It now runs all three recorders, so they no longer stop when the laptop sleeps.</span><span class="pill good">Upgraded</span></div>
+    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder</span><span class="note">Moved to the cloud server. Laptop and server recorded the 10:45–11:00 pm window identically (895 of 900 seconds, no gaps), then the laptop copy was switched off. The server shows 0 errors so far.</span><span class="pill good">Recording on the server</span></div>
+    <div class="hrow"><span class="what">Coin Toss game recorder</span><span class="note">Moved to the cloud server at 10:40 pm. No game until Mon Nov 9 at 5:30 pm CT, which is its first real test there. The laptop copy keeps running as a backup until that's checked.</span><span class="pill warn">Moved, first game tomorrow</span></div>
+    <div class="hrow"><span class="what">Osprey's robot (cloud server)</span><span class="note">Running after the upgrade (about 4 minutes off). It only watches about 36–42 games now: after the stop verdict nobody re-approved the games whose rule wording changed.</span><span class="pill good">Running</span></div>
+    <div class="hrow"><span class="what">Osprey's 9 am market list update</span><span class="note">Worked every day through Nov 7. Today's run added nothing because Polymarket's server dropped the connection.</span><span class="pill warn">Missed today</span></div>
+    <div class="hrow"><span class="what">Bloodhound</span><span class="note">No work since Oct 14. Nothing is supposed to be running.</span><span class="pill idle">Not started</span></div>
   </div>
 </section>
 
@@ -171,33 +171,32 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-osprey">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 1 · repo alt-arb</span><h3 id="h-osprey">Osprey</h3></div>
-      <span class="pill good">Collecting data</span>
+      <span class="pill idle">Finished: no edge</span>
     </div>
     <p class="idea">Are the same games ever priced differently on two markets, enough to lock in a guaranteed profit?</p>
     <p class="analogy">Like two stores selling the same item. If one store sells "Team A wins" and the other sells "Team B wins", and you can buy both for less than $1 total, you win no matter who wins the game.</p>
     <ol class="track" aria-label="Stages">
       <li class="done">1 · Build the price checker</li>
-      <li class="now">2 · Collect 2+ weeks of data</li>
-      <li>3 · Practice trades on paper</li>
-      <li>4 · Small live test</li>
+      <li class="done">2 · Collect 2+ weeks of data</li>
+      <li class="done">Verdict: stop</li>
     </ol>
     <div class="cols">
       <div>
-        <h4>What's happening</h4>
-        <p>A robot on a rented cloud server compares 327 matched games on Kalshi and Polymarket. One full check now takes about 8 minutes, up from about 4, because more games have been added. Every morning at 9, a task on the laptop adds newly listed games.</p>
+        <h4>Result (Oct 28)</h4>
+        <p>15 days, 6,494 rounds of price checks on up to 361 games, 8 leagues. <strong>0 real opportunities</strong> by the rules set in advance. The biggest gap before a game started was worth $2.33, and the bar was $20. No money was risked.</p>
       </div>
       <div>
-        <h4>Early signal (not a conclusion)</h4>
-        <p>In the first 2 hours of clean data there were 4 small gaps (the best was about $2.59), all during games. About 87% of the time, covering both sides cost $1.00 or more before fees. That points toward "no edge", but it's far too early to say.</p>
+        <h4>Fine print</h4>
+        <p>The checker took 1.5–9 minutes per round, so very short gaps could be missed. Fewer games were covered in the last days, and there was a 1-hour outage on Oct 22. All of these could only hide gaps, not invent them. They're written down next to the verdict.</p>
       </div>
       <div>
         <h4>What happens next</h4>
-        <p>Keep collecting until there are 14 days of clean data across at least 3 leagues. The first verdict comes around <strong>Oct 27</strong>.</p>
+        <p>Nothing more to build. The robot is still running. You decide whether to switch it off.</p>
       </div>
     </div>
     <div class="gate">
-      <b>How it gets decided</b>
-      <p>A "real" opportunity has to show up before the game starts, last for at least two price checks in a row, and be worth at least $20 after fees. <strong>Go</strong> if there are 5 or more a week. <strong>Stop</strong> if there's fewer than 1 a week. In between means "maybe": test a faster checker next.</p>
+      <b>How it was decided</b>
+      <p>A "real" opportunity had to show up before the game starts, last for at least two price checks in a row, and be worth at least $20 after fees. <strong>Go</strong> at 5 or more a week, <strong>stop</strong> below 1 a week. Result: 0 a week, so <strong>stop</strong>.</p>
     </div>
   </article>
 
@@ -205,29 +204,29 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-coin">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 2 · repo alt-scalp</span><h3 id="h-coin">Coin Toss</h3></div>
-      <span class="pill warn">Test recordings</span>
+      <span class="pill warn">Enough recordings, analysis overdue</span>
     </div>
     <p class="idea">Right around kickoff, do prices wiggle back and forth enough for a patient "shopkeeper" to earn the gap between buying and selling?</p>
     <p class="analogy">A shopkeeper posts a buy price (48¢) and a sell price (51¢) and earns the 3¢ difference each time someone trades both ways. The danger: the one time a team scores, everyone trades with you at the wrong price.</p>
     <ol class="track" aria-label="Stages">
       <li class="done">S0 · Research</li>
-      <li class="now">S1 · Record games</li>
-      <li>S2 · Measure the wiggles</li>
+      <li class="done">S1 · Record games</li>
+      <li class="now">S2 · Measure the wiggles (overdue)</li>
       <li>S3 · Simulate the shopkeeper</li>
     </ol>
     <div class="cols">
       <div>
-        <h4>What's happening</h4>
-        <p>The laptop records each NFL, NBA and NHL game from 30 minutes before to 20 minutes after the start, about every 3 seconds. These first nights are practice and don't count. Counted recordings start <strong>Oct 17</strong>.</p>
+        <h4>Progress</h4>
+        <p class="mono">197 clean games since Oct 17 (NBA 83, NFL 39, NHL 75); the goal was 20</p>
+        <p>Another 168 weren't clean, mostly because the laptop slept.</p>
       </div>
       <div>
-        <h4>Progress</h4>
-        <p class="mono">Counted: 0 / 20 clean games (need ≥ 5 per league)</p>
-        <p>Practice nights: Oct 13 had 9 clean games out of 16. The other 7 were lost because the laptop slept with the lid closed. Oct 14 had 1 clean game out of 2. The other was lost for the same reason.</p>
+        <h4>What's happening</h4>
+        <p>Recording moved to the cloud server tonight. The analysis step (S2), planned for Oct 22–24, hasn't been run yet.</p>
       </div>
       <div>
         <h4>Early signal (practice games only)</h4>
-        <p>The gap between buy and sell prices was only 1¢ in every practice game. The typical game had 1 back-and-forth wiggle, and the bar is 3. If counted games look the same, this project will likely stop at S2.</p>
+        <p>In the October practice games the buy/sell gap was only 1¢ and the typical game had 1 wiggle, against a bar of 3. Not a conclusion: the counted games haven't been analyzed.</p>
       </div>
     </div>
     <div class="gate">
@@ -240,7 +239,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-slot">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 3 · repo alt-btc15</span><h3 id="h-slot">Slot Machine</h3></div>
-      <span class="pill bad">Recording, losing data</span>
+      <span class="pill good">Recording on the server</span>
     </div>
     <p class="idea">Kalshi runs a new "Will Bitcoin be up or down?" market every 15 minutes. Is there a way to beat it?</p>
     <p class="analogy">Round 1 tried to beat it by grabbing prices that were already posted. That failed. Round 2 tries the shopkeeper approach instead: post your own prices and wait for people to come to you.</p>
@@ -248,7 +247,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <li class="done">S1 · Test 4 strategies on past data</li>
       <li class="done">Result: none worked</li>
       <li class="now">R1 · Record live order books</li>
-      <li>Shopkeeper test (after Oct 28)</li>
+      <li>Shopkeeper test (after 900 usable windows)</li>
     </ol>
     <div class="cols">
       <div>
@@ -256,12 +255,12 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
         <p>12,690 past 15-minute markets, 61 strategy versions, final test run once. All four strategies lost money or broke even per trade (A −$0.81, B −$1.18, C −$0.27, D −$0.13). <strong>No edge.</strong> No money was risked.</p>
       </div>
       <div>
-        <h4>What's happening</h4>
-        <p>The laptop records the full list of buy and sell offers every second, 24/7, until <strong>Oct 28</strong>. It's about 0.8 GB so far. Nobody looks at the results until then, so the test stays fair.</p>
+        <h4>What happened</h4>
+        <p>On the laptop, the share of each day recorded swung from about 1% to 98% (Oct 19 – Nov 8) because it kept sleeping. A window only counts if 95% of it was recorded, so the rules pushed the end date back. Recording moved to the cloud server tonight.</p>
       </div>
       <div>
-        <h4>Problem right now</h4>
-        <p>A 15-minute window only counts if at least 95% of it was recorded. Since 7 pm last night the laptop was mostly asleep, so only about 16% got recorded. Most of those windows won't count. If too few count by Oct 28, the rules push the end date back. The fix: on Oct 15 you decided to move it to the shared cloud server, which doesn't sleep. (On Oct 14 the timing was also fixed, from 57 snapshots a minute to exactly 60.)</p>
+        <h4>What happens next</h4>
+        <p>Keep recording until there are 900 usable windows (about 10 days of nearly full coverage). Then run the shopkeeper test exactly as written in advance.</p>
       </div>
     </div>
     <div class="gate">
@@ -274,13 +273,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-blood">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 4 · repo alt-edge</span><h3 id="h-blood">Bloodhound</h3></div>
-      <span class="pill idle">Research done</span>
+      <span class="pill idle">Ready to start</span>
     </div>
     <p class="idea">"Will Trump say ___ in his speech?" markets. Does doing your homework (old transcripts, the fine print) beat the crowd's gut feel?</p>
     <p class="analogy">Unlike the others, this is a homework race, not a speed race. If Trump has said "tariff" in 9 of his last 10 rallies, and the market prices it at 60¢, the homework says that's too cheap.</p>
     <ol class="track" aria-label="Stages">
       <li class="done">S0 · Research + set the rules</li>
-      <li class="now">S1 · Build the predictor (starting)</li>
+      <li class="now">S1 · Build the predictor (not started)</li>
       <li>Score on past speeches</li>
       <li>Paper trades</li>
     </ol>
@@ -295,7 +294,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       </div>
       <div>
         <h4>What happens next</h4>
-        <p>Started early (on purpose) so there's something to show on <strong>Oct 25</strong>: a first predictor tested on older speeches. The real test on recent speeches (June–Oct 2026) is scored once, by <strong>Nov 8</strong>. No robots run all day. It only does one-off, slow downloads.</p>
+        <p>Its turn came when Osprey stopped on Oct 28, but no work has been done since Oct 14. The Oct 25 and Nov 8 targets for it passed without a predictor.</p>
       </div>
     </div>
     <div class="gate">
@@ -309,14 +308,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Your list</span>
   <h2 id="h-todo">What's waiting on you</h2>
   <ul class="todo">
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Until the move: keep the laptop plugged in with the lid open.</strong><div class="why">Being open isn't enough on battery. It sleeps after a minute of no use. Last night Slot Machine caught only 16%.</div></div></li>
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Upgrade the cloud server (DigitalOcean droplet "alt-arb")</strong> to the $12/month size: 1 CPU, 2 GB memory, 50 GB disk.<div class="why">You decided all three recorders will share this one server, so they keep running when the laptop is off. After that, Coin Toss and Slot Machine each move onto it from their own chats. Coin Toss should move before Fri Oct 17.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>In the Osprey chat: fix its health check</strong> so a busy database doesn't show up as "no scans".</div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Class checkpoint 1: record the 1–2 min progress video, then submit the concept brief yourself.</strong><div class="why">The shot plan is in docs/class/01-progress-video-plan.md. After recording, add the video to the capture list in the journal.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Write your verdict on the AI-drafted concept brief</strong> (accepted, revised or rejected, and why).<div class="why">It's the last row of the AI log in docs/journal.md.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>In the Claude app: delete the old folder presets</strong> (alt-arb, alt-scalp, alt-btc15) and check that Osprey's 9 am task points at the new project-osprey folder.</div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Osprey: spot-check about 10 matched games yourself.</strong><div class="why">No match has been read first-hand by you yet.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Start the Oct 25 checkpoint</strong> (≤ 400 words + 1–2 min video).</div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Add two "read-only keys" on GitHub</strong> (about 2 minutes).<div class="why">They let the server download future code changes for Coin Toss and Slot Machine. The keys are in tonight's HQ chat. Add each one under the matching repo: Settings → Deploy keys, with "Allow write access" left off.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>After Monday evening's games: check that Coin Toss's server recordings are clean, then turn off the laptop copy.</strong></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Coin Toss: run the analysis (S2).</strong><div class="why">It was due Oct 22–24, and there are 197 clean games to work with.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Osprey: decide whether to switch the robot and the 9 am update off.</strong><div class="why">The verdict is in (stop). Switching off frees up the server.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Bloodhound: start building the predictor (S1).</strong></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Fill in your judgment lines in the journals</strong> (accepted, revised or rejected, and why).<div class="why">Several entries end with "to fill in".</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Osprey: spot-check about 10 matched games yourself.</strong><div class="why">Less important now that Osprey has stopped, but none has been read first-hand yet.</div></div></li>
   </ul>
 </section>
 
@@ -324,15 +322,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Calendar</span>
   <h2 id="h-dates">What's coming up</h2>
   <ol class="timeline">
-    <li><span class="d">Oct 14</span><span class="t">Slot Machine recorder timing fixed, Bloodhound rules confirmed, Coin Toss practice night.</span></li>
-    <li class="today"><span class="d">Oct 15–16</span><span class="t">Today. Coin Toss: more practice recordings (hockey).</span></li>
-    <li><span class="d">Oct 17–19</span><span class="t">Coin Toss: counted recordings begin (NHL Sat/Sun, NFL Sun + Mon).</span></li>
-    <li><span class="d">Oct 20–22</span><span class="t">Coin Toss: NBA opening week. Target of 20 clean games by Oct 22.</span></li>
-    <li><span class="d">Oct 22–24</span><span class="t">Coin Toss: first analysis (S2).</span></li>
-    <li class="class"><span class="d">Oct 25</span><span class="t">Class: early prototype update (≤ 400 words + video).</span></li>
-    <li><span class="d">~Oct 27</span><span class="t">Osprey: first go/stop verdict.</span></li>
-    <li><span class="d">Oct 28</span><span class="t">Slot Machine: recording period ends and the shopkeeper test can be run.</span></li>
-    <li class="class"><span class="d">Nov 8</span><span class="t">Class: working build + test. Bloodhound's real test scored by now.</span></li>
+    <li><span class="d">Oct 28</span><span class="t">Osprey's verdict: stop (no edge).</span></li>
+    <li class="today class"><span class="d">Nov 8</span><span class="t">Today. Class: working build + test. Server upgraded, and recorders moved onto it.</span></li>
+    <li><span class="d">Nov 9</span><span class="t">Coin Toss: first games recorded on the server (from 5:30 pm CT).</span></li>
     <li class="class"><span class="d">Nov 22</span><span class="t">Class: iteration + story.</span></li>
     <li class="class"><span class="d">Dec 1 · Dec 4</span><span class="t">Class: rough cuts, then the final package.</span></li>
   </ol>
@@ -343,33 +335,27 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h2 id="h-changes">What changed recently</h2>
   <div class="changes">
     <div class="change">
+      <span class="when">Nov 8</span>
+      <ul class="plain">
+        <li><strong>The cloud server was upgraded</strong> ($12/month: 2 GB memory, 50 GB disk). Osprey's robot was off for about 4 minutes.</li>
+        <li><strong>Slot Machine and Coin Toss now record on the server</strong>, so laptop sleep no longer costs data. Each has its own account and folder on the server.</li>
+        <li>All the journals were caught up, and the portfolio page now shows the current state.</li>
+      </ul>
+    </div>
+    <div class="change">
+      <span class="when">Oct 28</span>
+      <ul class="plain">
+        <li><strong>Osprey's verdict: stop.</strong> 0 real opportunities in 15 days, so there's no edge. A clean "no" is a valid result for the class.</li>
+      </ul>
+    </div>
+    <div class="change">
       <span class="when">Oct 15</span>
       <ul class="plain">
-        <li><strong>Decision:</strong> one shared cloud server instead of a second one. Osprey's server gets upgraded (about $12/month instead of $6) and Coin Toss and Slot Machine move onto it, so nothing depends on the laptop. The server was barely busy (memory about 39%, CPU about 1%). Disk space was the only thing it was short on.</li>
-        <li>The laptop was on battery and slept most of the night. <strong>Slot Machine</strong> captured only about 16% of the seconds since 7 pm.</li>
-        <li><strong>Coin Toss</strong> practice: 1 of 2 games clean. The other was lost when the lid was closed for 8 minutes.</li>
-        <li><strong>Osprey</strong> now watches 327 games. Its 9 am update added 34, including the first NBA games. Its health check gave a false alarm.</li>
-        <li>Correction: the Oct 14 evening gap that was first reported as an internet outage happened while the laptop was asleep with the lid closed (it woke at 5:59 pm).</li>
+        <li><strong>Decision:</strong> one shared cloud server instead of a second one.</li>
+        <li>Osprey's 9 am update was moved to the new folder, its false health alarm was fixed, and its database was changed so checks don't get blocked.</li>
       </ul>
     </div>
-    <div class="change">
-      <span class="when">Oct 14 · evening</span>
-      <ul class="plain">
-        <li><strong>Bloodhound</strong> finished its research and you confirmed its rules (Trump decides, Vance is a side result, 5-contract paper trades). It's allowed to read Roll Call's transcript site slowly, for research only.</li>
-        <li><strong>Slot Machine</strong>'s recorder timing was fixed. You approved the round-2 test plan and its 7 clarifications before any data was looked at.</li>
-        <li><strong>Coin Toss</strong> recorded its first practice game since the folder move, and it was clean.</li>
-        <li>A gap around 5:30–6:00 pm cut into Slot Machine's recording (later traced to the laptop sleeping). No Coin Toss game was on at the time.</li>
-      </ul>
-    </div>
-    <div class="change">
-      <span class="when">Oct 14 · afternoon</span>
-      <ul class="plain">
-        <li>Project folders renamed to their code names. Everything was restarted and checked.</li>
-        <li>Slot Machine round 1 finished with no edge. It was reopened the same day for round 2.</li>
-        <li>Class checkpoint 1 concept brief written (late). Shared journal started.</li>
-      </ul>
-    </div>
-    </div>
+  </div>
 </section>
 
 <section class="stack" aria-labelledby="h-terms">
