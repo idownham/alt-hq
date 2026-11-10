@@ -146,3 +146,17 @@ session only.
   generated for Ian to add.
 - Cutovers and overlaps are logged in each project's journal and decisions. Laptop data is kept as is.
 - The Osprey daily refresh stays a laptop scheduled task.
+
+## 2026-11-09/10 — Two STOPs close out; only Slot Machine keeps running
+**Decision (Ian, 2026-11-09):** confirmed Coin Toss STOP at S2 (in its own session, `d9cb4ad`). Then he told this HQ chat to
+"take over" with its recommendations: shut Osprey down cleanly, stop Coin Toss recording, and keep a disk guard for Slot Machine.
+**Done (2026-11-10 UTC):**
+- Osprey scanner + update timer disabled at 03:23. Final scan log archived to the laptop (checksum matched). Daily refresh task disabled.
+  The full-archive report is still STOP. Its only 2 "qualifying" episodes were a wrong-game auto-verified pair
+  (`project-osprey/docs/decisions.md` 2026-11-10, `7b41451`).
+- Coin Toss server recorder + update timer disabled at 03:29, after the last trades were fetched. Server DB archived to the laptop
+  (12 windows, all clean). Laptop agent unloaded (`201b8ee`).
+- Disk guard: `/health` now checks droplet free space (🔴 < 5 GB) and that stopped services stay stopped. There's no auto-delete.
+  At ~0.9–1.5 GB/day the 41 GB free lasts past Dec 4.
+**Consequence:** the droplet runs only Slot Machine's recorder. The laptop runs nothing scheduled. Bloodhound's verdict comes
+from the one pooled extension, scored around Nov 21.

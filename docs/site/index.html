@@ -137,7 +137,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h1>Alt Projects Briefing</h1>
   <p class="lede">Four small experiments that each ask one question: <strong>can a careful student find a real, repeatable edge in prediction markets</strong>, or are the prices already fair? Everything is test-and-measure. No real money is being traded.</p>
   <div class="stamp">
-    <span>Last updated: Sun Nov 8, 2026 · about 11:15 pm CT</span>
+    <span>Last updated: Mon Nov 9, 2026 · about 9:45 pm CT</span>
     <span>Source: the four project folders + HQ</span>
   </div>
   <div class="rule-box">
@@ -149,14 +149,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
 <section class="stack" aria-labelledby="h-now">
   <span class="eyebrow">Right now</span>
   <h2 id="h-now">Is everything running?</h2>
-  <p class="muted">Checked Sun Nov 8, about 10:30–11:15 pm CT.</p>
+  <p class="muted">Checked Mon Nov 9, about 9:20–9:45 pm CT. Only one thing is supposed to run now.</p>
   <div class="health">
-    <div class="hrow"><span class="what">Cloud server ("alt-arb")</span><span class="note">Upgraded tonight to the $12/month size: 2 GB memory, 50 GB disk (44 GB free). It now runs all three recorders, so they no longer stop when the laptop sleeps.</span><span class="pill good">Upgraded</span></div>
-    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder</span><span class="note">Moved to the cloud server. Laptop and server recorded the 10:45–11:00 pm window identically (895 of 900 seconds, no gaps), then the laptop copy was switched off. The server shows 0 errors so far.</span><span class="pill good">Recording on the server</span></div>
-    <div class="hrow"><span class="what">Coin Toss game recorder</span><span class="note">Moved to the cloud server at 10:40 pm. No game until Mon Nov 9 at 5:30 pm CT, which is its first real test there. The laptop copy keeps running as a backup until that's checked.</span><span class="pill warn">Moved, first game tomorrow</span></div>
-    <div class="hrow"><span class="what">Osprey's robot (cloud server)</span><span class="note">Running after the upgrade (about 4 minutes off). It only watches about 36–42 games now: after the stop verdict nobody re-approved the games whose rule wording changed.</span><span class="pill good">Running</span></div>
-    <div class="hrow"><span class="what">Osprey's 9 am market list update</span><span class="note">Worked every day through Nov 7. Today's run added nothing because Polymarket's server dropped the connection.</span><span class="pill warn">Missed today</span></div>
-    <div class="hrow"><span class="what">Bloodhound</span><span class="note">No work since Oct 14. Nothing is supposed to be running.</span><span class="pill idle">Not started</span></div>
+    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (cloud server)</span><span class="note">Recording around the clock. It's the only service left on the server.</span><span class="pill good">Running</span></div>
+    <div class="hrow"><span class="what">Cloud server disk</span><span class="note">41 GB free. The recorder adds about 1–1.5 GB a day, so that's enough past Dec 4. The /health check warns if it drops under 5 GB.</span><span class="pill good">Plenty of room</span></div>
+    <div class="hrow"><span class="what">Osprey (robot + 9 am update)</span><span class="note">Switched off tonight, after its verdict. All its data is saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
+    <div class="hrow"><span class="what">Coin Toss game recorder</span><span class="note">Switched off tonight, after its verdict. Its first evening on the server was clean (12 of 12 games). Data saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
+    <div class="hrow"><span class="what">Bloodhound</span><span class="note">No robots. It only does hand-started, slow downloads. Next run is around Nov 21.</span><span class="pill idle">Waiting</span></div>
   </div>
 </section>
 
@@ -179,6 +178,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <li class="done">1 · Build the price checker</li>
       <li class="done">2 · Collect 2+ weeks of data</li>
       <li class="done">Verdict: stop</li>
+      <li class="done">Switched off (Nov 10)</li>
     </ol>
     <div class="cols">
       <div>
@@ -186,12 +186,12 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
         <p>15 days, 6,494 rounds of price checks on up to 361 games, 8 leagues. <strong>0 real opportunities</strong> by the rules set in advance. The biggest gap before a game started was worth $2.33, and the bar was $20. No money was risked.</p>
       </div>
       <div>
-        <h4>Fine print</h4>
-        <p>The checker took 1.5–9 minutes per round, so very short gaps could be missed. Fewer games were covered in the last days, and there was a 1-hour outage on Oct 22. All of these could only hide gaps, not invent them. They're written down next to the verdict.</p>
+        <h4>A lesson found at the end</h4>
+        <p>Checking all the data one last time turned up 2 huge "opportunities" ($30,000). They were fake: the automatic matcher had paired Kentucky vs Tennessee with a <strong>different game</strong>, Western Kentucky vs Middle Tennessee. Real money on that pair could have lost both bets. It doesn't change the verdict, and it's the best example of why every match needs checking.</p>
       </div>
       <div>
-        <h4>What happens next</h4>
-        <p>Nothing more to build. The robot is still running. You decide whether to switch it off.</p>
+        <h4>Status</h4>
+        <p>Switched off. All data saved. Nothing more to build.</p>
       </div>
     </div>
     <div class="gate">
@@ -204,34 +204,33 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-coin">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 2 · repo alt-scalp</span><h3 id="h-coin">Coin Toss</h3></div>
-      <span class="pill warn">Enough recordings, analysis overdue</span>
+      <span class="pill idle">Finished: no edge</span>
     </div>
     <p class="idea">Right around kickoff, do prices wiggle back and forth enough for a patient "shopkeeper" to earn the gap between buying and selling?</p>
     <p class="analogy">A shopkeeper posts a buy price (48¢) and a sell price (51¢) and earns the 3¢ difference each time someone trades both ways. The danger: the one time a team scores, everyone trades with you at the wrong price.</p>
     <ol class="track" aria-label="Stages">
       <li class="done">S0 · Research</li>
       <li class="done">S1 · Record games</li>
-      <li class="now">S2 · Measure the wiggles (overdue)</li>
-      <li>S3 · Simulate the shopkeeper</li>
+      <li class="done">S2 · Verdict: stop</li>
+      <li class="skip">S3 · Simulate the shopkeeper</li>
     </ol>
     <div class="cols">
       <div>
-        <h4>Progress</h4>
-        <p class="mono">197 clean games since Oct 17 (NBA 83, NFL 39, NHL 75); the goal was 20</p>
-        <p>Another 168 weren't clean, mostly because the laptop slept.</p>
+        <h4>Result (Nov 9)</h4>
+        <p>196 clean games (NBA, NFL, NHL). In the typical game the price swung back and forth <strong>0 times</strong> by more than the cost of trading. The bar was 3. So there's not enough wiggle for a shopkeeper to earn from. No money was risked.</p>
       </div>
       <div>
-        <h4>What's happening</h4>
-        <p>Recording moved to the cloud server tonight. The analysis step (S2), planned for Oct 22–24, hasn't been run yet.</p>
+        <h4>What happened next</h4>
+        <p>The shopkeeper simulation (S3) isn't run, because the first bar failed. Recording was switched off on Nov 10, and all recordings are saved.</p>
       </div>
       <div>
-        <h4>Early signal (practice games only)</h4>
-        <p>In the October practice games the buy/sell gap was only 1¢ and the typical game had 1 wiggle, against a bar of 3. Not a conclusion: the counted games haven't been analyzed.</p>
+        <h4>Side lesson</h4>
+        <p>Recording on the laptop lost 168 games to sleep. The cloud server's first evening was 12 for 12 clean.</p>
       </div>
     </div>
     <div class="gate">
-      <b>How it gets decided</b>
-      <p>First bar: in the typical game, at least 3 real back-and-forth price swings bigger than the cost of trading. If it clears that, a simulation has to show overall profit, profit in at least 60% of games, and losses to "bad timing" under half of what it earns.</p>
+      <b>How it was decided</b>
+      <p>First bar: in the typical game, at least 3 real back-and-forth price swings bigger than the cost of trading. Result: 0, so <strong>stop</strong>.</p>
     </div>
   </article>
 
@@ -256,7 +255,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       </div>
       <div>
         <h4>What happened</h4>
-        <p>On the laptop, the share of each day recorded swung from about 1% to 98% (Oct 19 – Nov 8) because it kept sleeping. A window only counts if 95% of it was recorded, so the rules pushed the end date back. Recording moved to the cloud server tonight.</p>
+        <p>On the laptop, the share of each day recorded swung from about 1% to 98% (Oct 19 – Nov 8) because it kept sleeping. A window only counts if 95% of it was recorded, so the rules pushed the end date back. Recording moved to the cloud server on Nov 8, and it's the only thing still running.</p>
       </div>
       <div>
         <h4>What happens next</h4>
@@ -273,28 +272,28 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-blood">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 4 · repo alt-edge</span><h3 id="h-blood">Bloodhound</h3></div>
-      <span class="pill idle">Ready to start</span>
+      <span class="pill warn">Too close to call yet</span>
     </div>
     <p class="idea">"Will Trump say ___ in his speech?" markets. Does doing your homework (old transcripts, the fine print) beat the crowd's gut feel?</p>
     <p class="analogy">Unlike the others, this is a homework race, not a speed race. If Trump has said "tariff" in 9 of his last 10 rallies, and the market prices it at 60¢, the homework says that's too cheap.</p>
     <ol class="track" aria-label="Stages">
       <li class="done">S0 · Research + set the rules</li>
-      <li class="now">S1 · Build the predictor (not started)</li>
-      <li>Score on past speeches</li>
-      <li>Paper trades</li>
+      <li class="done">S1 · Build + freeze the predictor</li>
+      <li class="done">Test: too close to call</li>
+      <li class="now">Extra round (~Nov 21)</li>
     </ol>
     <div class="cols">
       <div>
-        <h4>Biggest finding</h4>
-        <p>These markets close the moment the word is said, so the final price already "knows" the answer. Comparing against it would be unfair. The test instead uses the price <strong>15 minutes before the speech starts</strong>.</p>
-      </div>
-      <div>
-        <h4>Scale</h4>
-        <p>The Trump market is huge: 6,858 settled questions across 241 events since April 2025, about 16 events a month. Vance markets are scored too, as a side result.</p>
+        <h4>Test result (Nov 9, not a conclusion)</h4>
+        <p>60 speeches, 1,640 questions. The predictor's Brier score was 0.1614 and the market's was 0.1631, so the predictor was a little better. But the difference is small enough that it could be luck, which makes it <strong>inconclusive</strong>.</p>
       </div>
       <div>
         <h4>What happens next</h4>
-        <p>Its turn came when Osprey stopped on Oct 28, but no work has been done since Oct 14. The Oct 25 and Nov 8 targets for it passed without a predictor.</p>
+        <p>The rules written in advance allow exactly one extra round: score the same frozen predictor on new speeches through Nov 20, pooled with the test. That gives pass or stop, and "still unclear" counts as stop. It can run from Nov 21. Vance was dropped for this round.</p>
+      </div>
+      <div>
+        <h4>Why it's fair</h4>
+        <p>The predictor was locked before the test (a "freeze"), and the scoring script refuses to run if it's changed.</p>
       </div>
     </div>
     <div class="gate">
@@ -308,13 +307,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Your list</span>
   <h2 id="h-todo">What's waiting on you</h2>
   <ul class="todo">
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Add two "read-only keys" on GitHub</strong> (about 2 minutes).<div class="why">They let the server download future code changes for Coin Toss and Slot Machine. The keys are in tonight's HQ chat. Add each one under the matching repo: Settings → Deploy keys, with "Allow write access" left off.</div></div></li>
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>After Monday evening's games: check that Coin Toss's server recordings are clean, then turn off the laptop copy.</strong></div></li>
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Coin Toss: run the analysis (S2).</strong><div class="why">It was due Oct 22–24, and there are 197 clean games to work with.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Osprey: decide whether to switch the robot and the 9 am update off.</strong><div class="why">The verdict is in (stop). Switching off frees up the server.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Bloodhound: start building the predictor (S1).</strong></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Fill in your judgment lines in the journals</strong> (accepted, revised or rejected, and why).<div class="why">Several entries end with "to fill in".</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Osprey: spot-check about 10 matched games yourself.</strong><div class="why">Less important now that Osprey has stopped, but none has been read first-hand yet.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Around Nov 21: Bloodhound's extra round.</strong><div class="why">Open a Bloodhound chat to collect speeches through Nov 20 and run the final scoring once. That decides pass or stop before the Nov 22 class date.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Fill in your judgment lines in the journals</strong> (accepted, revised or rejected, and why).<div class="why">Several entries end with "to fill in", including tonight's close-out.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Slot Machine: when it has 900 usable windows, run the shopkeeper test.</strong><div class="why">Probably about 10 days of full recording. Ask in a Slot Machine chat.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Plan the story for Nov 22.</strong><div class="why">You have two clean "no edge" results, one fake-opportunity lesson, and one result still open.</div></div></li>
   </ul>
 </section>
 
@@ -322,9 +318,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Calendar</span>
   <h2 id="h-dates">What's coming up</h2>
   <ol class="timeline">
-    <li><span class="d">Oct 28</span><span class="t">Osprey's verdict: stop (no edge).</span></li>
-    <li class="today class"><span class="d">Nov 8</span><span class="t">Today. Class: working build + test. Server upgraded, and recorders moved onto it.</span></li>
-    <li><span class="d">Nov 9</span><span class="t">Coin Toss: first games recorded on the server (from 5:30 pm CT).</span></li>
+    <li><span class="d">Nov 8</span><span class="t">Server upgraded; recorders moved onto it.</span></li>
+    <li class="today"><span class="d">Nov 9–10</span><span class="t">Today. Coin Toss: stop. Bloodhound: test too close to call. Osprey and Coin Toss switched off.</span></li>
+    <li><span class="d">~Nov 21</span><span class="t">Bloodhound: extra round scored once, then pass or stop.</span></li>
     <li class="class"><span class="d">Nov 22</span><span class="t">Class: iteration + story.</span></li>
     <li class="class"><span class="d">Dec 1 · Dec 4</span><span class="t">Class: rough cuts, then the final package.</span></li>
   </ol>
@@ -335,24 +331,24 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h2 id="h-changes">What changed recently</h2>
   <div class="changes">
     <div class="change">
+      <span class="when">Nov 9–10</span>
+      <ul class="plain">
+        <li><strong>Coin Toss: stop.</strong> Prices didn't wiggle enough (0 swings in the typical game, and the bar was 3).</li>
+        <li><strong>Bloodhound:</strong> the predictor was built and locked, then tested once. It came out a little better than the market, but not clearly. One extra round decides.</li>
+        <li><strong>Osprey and Coin Toss were switched off</strong> and their data saved. Osprey's last check found a fake $30,000 "opportunity" caused by a wrong-game match.</li>
+      </ul>
+    </div>
+    <div class="change">
       <span class="when">Nov 8</span>
       <ul class="plain">
-        <li><strong>The cloud server was upgraded</strong> ($12/month: 2 GB memory, 50 GB disk). Osprey's robot was off for about 4 minutes.</li>
-        <li><strong>Slot Machine and Coin Toss now record on the server</strong>, so laptop sleep no longer costs data. Each has its own account and folder on the server.</li>
-        <li>All the journals were caught up, and the portfolio page now shows the current state.</li>
+        <li><strong>The cloud server was upgraded</strong> ($12/month: 2 GB memory, 50 GB disk), and the recorders moved onto it.</li>
+        <li>All the journals were caught up.</li>
       </ul>
     </div>
     <div class="change">
       <span class="when">Oct 28</span>
       <ul class="plain">
-        <li><strong>Osprey's verdict: stop.</strong> 0 real opportunities in 15 days, so there's no edge. A clean "no" is a valid result for the class.</li>
-      </ul>
-    </div>
-    <div class="change">
-      <span class="when">Oct 15</span>
-      <ul class="plain">
-        <li><strong>Decision:</strong> one shared cloud server instead of a second one.</li>
-        <li>Osprey's 9 am update was moved to the new folder, its false health alarm was fixed, and its database was changed so checks don't get blocked.</li>
+        <li><strong>Osprey's verdict: stop.</strong> 0 real opportunities in 15 days.</li>
       </ul>
     </div>
   </div>

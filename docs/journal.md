@@ -69,6 +69,17 @@ STOP). The largest pre-game gap was $2.33 against a $20 bar. Consequence: no pap
 both recorders now run on it under their own users. Cutovers are logged in each project. This HQ chat did the moves
 and caught up every journal at Ian's request (HQ decisions 2026-11-08).
 
+**2026-11-09 · Coin Toss S2 = STOP · [d9cb4ad](https://github.com/idownham/alt-scalp/commit/d9cb4ad) · Bloodhound S1 · [bb92f3a](https://github.com/idownham/alt-edge/commit/bb92f3a), [498a059](https://github.com/idownham/alt-edge/commit/498a059)**
+**Iteration (pre-registered result → decision):** Coin Toss's median game reversed 0 times (bar: ≥ 3) across 196 clean
+games, so STOP, confirmed by Ian. Bloodhound froze its model and scored the test once: INCONCLUSIVE (Brier 0.1614 vs market
+0.1631, CI includes 0). That triggers the one pre-registered extension. Ian fixed the pooling rule before any extension outcome was read.
+
+**2026-11-10 · Close-out of two projects · Osprey [7b41451](https://github.com/idownham/alt-arb/commit/7b41451), Coin Toss [201b8ee](https://github.com/idownham/alt-scalp/commit/201b8ee)**
+Work: Osprey and Coin Toss services stopped and their data archived. `/health` was rewritten for one running service.
+**Iteration (evidence → decision → consequence):** re-running Osprey's report on all data found its only "qualifying"
+episodes came from a wrong-game pair the daily auto-verifier approved ("Kentucky" ≈ "Western Kentucky") → the pair was
+un-verified and documented → the verdict stands, and it's the project's clearest real example of its #1 risk.
+
 ---
 
 ## AI log
@@ -81,6 +92,7 @@ and caught up every journal at Ian's request (HQ decisions 2026-11-08).
 | 10-14 | Claude Code · concept brief | draft the Oct 11 brief from the repos | This checkpoint's brief | *Ian to fill in: accepted / revised / rejected* | `docs/class/01-concept-brief.md` |
 | 10-28 | Claude Code · Osprey Decision A | "Yes, record STOP" | Report + episode/error queries; STOP entry with the biases listed | **Accepted** STOP without changing criteria | [ae52199](https://github.com/idownham/alt-arb/commit/ae52199) |
 | 11-08 | Claude Code (HQ chat) · server move + records | "Can you go move everything, update everything, and then backlog everything into github" | Both recorders deployed on the droplet; journals, decisions, portfolio and site updated from logs and data | **Accepted** the $12 plan (chose it over $18). *Ian to fill in on the rest* | HQ decisions 2026-11-08 |
+| 11-09 | Claude Code (HQ chat) · close-out | "Continue with what you think I should do. Take over" | Osprey + Coin Toss stopped and archived; wrong-game pair found and un-verified; /health rewritten | **Delegated** ("take over"). *Ian to fill in after review* | HQ decisions 2026-11-09/10 |
 
 *Exact prompts weren't saved for the early entries; excerpts are paraphrased from the commits. From now on, paste a
 one-line real excerpt.*

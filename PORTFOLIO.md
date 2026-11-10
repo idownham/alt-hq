@@ -1,19 +1,25 @@
 # Portfolio
 
-*Last updated: 2026-11-08 (late evening CT: droplet resized; Coin Toss and Slot Machine recorders moved onto it; Osprey STOP recorded). Update this file in an HQ session whenever a project changes stage or a milestone moves.*
+*Last updated: 2026-11-09 (late evening CT: Osprey shut down, Coin Toss STOP at S2 and recording stopped, Bloodhound test INCONCLUSIVE → extension). Update this file in an HQ session whenever a project changes stage or a milestone moves.*
 
 ## Status
 | Project | Stage | Running where | Next milestone | Gate |
 |---|---|---|---|---|
-| **Osprey** (alt-arb) | **Close-out: Decision point A = STOP (2026-10-28, ae52199).** 0 qualifying episodes in 15.2 days / 8 leagues | Droplet: scanner (still running, ~36–42 pairs) + daily 9 am pair refresh (laptop scheduled task) | Owner decision: shut the scanner and refresh down, or keep logging | Done: STOP < 1 qualifying episode/week was met (0.0/week) |
-| **Coin Toss** (alt-scalp) | S1 recording, sample far exceeded (197 clean windows since Oct 17); **S2 analysis overdue** (planned Oct 22–24) | **Droplet since 2026-11-09 04:40 UTC** (`altscalp-recorder`); laptop agent kept as backup until the first server window (Nov 9 23:30 UTC) is verified | S2 analysis per `project-coin-toss/docs/spec.md` | Pre-registered in `project-coin-toss/docs/spec.md` |
-| **Bloodhound** (alt-edge) | S0 done; criteria v2 confirmed 2026-10-14 (5db3067). **Slot open since Osprey STOP (Oct 28); S1 not started** | Not running — one-off paced public reads only (≤ 1 req/s), no keys | S1 build (`project-bloodhound/docs/s1-plan.md`) | Calibration backtest before any money |
-| **Slot Machine** (alt-btc15) | R1: read-only order-book recorder for a maker test (pre-registration approved 2026-10-14). Coverage too low on the laptop, so the end date extends until ≥ 900 usable windows | **Droplet since 2026-11-09** (`alt-btc15-recorder`, cutover logged in its journal); laptop agent stopped after a one-window overlap | Reach ≥ 900 usable windows, then the pre-registered maker analysis | No orders of any kind in R1. Go-live gate unchanged; A–D can't go live (failed S1) |
+| **Osprey** (alt-arb) | **Done: STOP** (Decision A, 2026-10-28). Shut down 2026-11-10; scan log archived | Nothing (scanner, update timer and daily refresh disabled) | — (class story only) | STOP < 1 qualifying episode/week: met (0.0/week) |
+| **Coin Toss** (alt-scalp) | **Done: STOP at S2** (Ian confirmed 2026-11-09, d9cb4ad): median 0 reversals in 196 clean games, ≥ 3 needed. Recording stopped 2026-11-10 | Nothing (server units disabled, laptop agent unloaded) | — (class story only) | Pre-registered S2 gate failed |
+| **Bloodhound** (alt-edge) | **S1:** model frozen (blend-v1, bb92f3a); test scored once 2026-11-09 → **INCONCLUSIVE** (Brier 0.1614 vs market 0.1631, CI [−0.0043, +0.0010]) → the one pre-registered extension | Nothing continuous; hand-run paced reads on the laptop | **~Nov 21:** collect events through Nov 20, score pooled test + extension once (`scripts/score_extension.py`) → PASS or STOP; time box Nov 22 | Pooled Brier < market with 95% upper bound < 0; still inconclusive = STOP |
+| **Slot Machine** (alt-btc15) | R1: read-only order-book recorder for a maker test (pre-registration approved 2026-10-14); end date extends until ≥ 900 usable windows | **Droplet** (`alt-btc15-recorder`, since cutover 2026-11-09 04:45 UTC). The only service still running | Reach ≥ 900 usable windows, then the pre-registered maker analysis | No orders of any kind in R1. A–D can't go live (failed S1) |
 
-**Shared server:** DigitalOcean droplet `alt-arb`, resized 2026-11-08 to Basic 1 vCPU / 2 GB / 50 GB ($12/mo). Each
-project has its own Linux user, `/opt` folder and systemd unit. Read-only, no keys. Only Osprey calls Polymarket.
+**Shared server:** DigitalOcean droplet `alt-arb`, Basic 1 vCPU / 2 GB / 50 GB ($12/mo, resized 2026-11-08). Only Slot
+Machine's recorder runs on it now. Osprey's and Coin Toss's code and data stay there with their services disabled.
+Disk: 41 GB free on 2026-11-10, with R1 growing ~0.9–1.5 GB/day (`/health` alerts under 5 GB).
 
 ## Results
+- **Coin Toss S2: STOP (2026-11-09).** 196 counted clean games (Oct 17 – Nov 8). Median price reversals per game 0
+  vs the pre-registered ≥ 3 (`project-coin-toss/docs/s2-results.md`). S3 not run. No money risked.
+- **Osprey, post-verdict check (2026-11-10):** the full archive (through Nov 10) is still STOP (0.5/week). Its only
+  2 "qualifying" episodes came from a wrong-game pair (Kentucky @ Tennessee auto-matched to Western Kentucky vs Middle
+  Tennessee State, auto-verified Oct 24). Now un-verified. This is a real example of the #1 risk, resolution mismatch.
 - **Osprey Decision point A: STOP (2026-10-28).** 15.2 days, 6,494 scans, 813,062 pair checks, 8 leagues. 1,040
   opportunity episodes (1,032 in-play, 8 pre-game); **0 qualifying** (pre-game, ≥ 2 scans, ≥ $20). Largest pre-game
   gap $2.33. Biases (scan speed, coverage drop from Oct 25, Oct 22 outage) all point toward under-counting and are
@@ -24,31 +30,32 @@ project has its own Linux user, `/opt` folder and systemd unit. Read-only, no ke
   no edge after spread and fees at 1-minute speed. No money risked.
 
 ## Early signals (not conclusions)
-- Coin Toss S0: public trade tape exists (timestamps, size, aggressor side) → fills can be simulated honestly.
-  Maker fee 0.25× taker on NFL/NBA/NHL game markets. No liquidity incentives on game-winner markets.
-  One liquid NHL game sat at a 1¢ spread at start — tight spreads are a risk to the thesis.
+- Bloodhound test (60 events / 1,640 markets): the frozen model's Brier score was slightly better than the market's
+  (−0.0017), but the 95% CI includes 0, so the result is **inconclusive**. The pooled extension decides.
 
 ## Timeline
 | Date | Event |
 |---|---|
-| **Oct 25** | Class: early prototype checkpoint |
 | Oct 28 | Osprey Decision point A = STOP |
 | **Nov 8** | Class: working build + test · droplet resized; recorders moved to it |
-| Nov 9 23:30 UTC | First Coin Toss game window recorded on the server → verify, then unload the laptop agent |
-| **Nov 22** | Class: iteration + story assembly |
+| Nov 9 | Coin Toss S2 = STOP · Bloodhound S1 frozen + test scored (inconclusive) |
+| Nov 10 | Osprey shut down; Coin Toss recording stopped (both archived) |
+| ~Nov 21 | Bloodhound: score the pooled extension once → PASS or STOP |
+| **Nov 22** | Class: iteration + story assembly · Bloodhound time box |
 | **Dec 1 / Dec 4** | Class: rough cuts / final package |
 
 ## Owner to-dos (Ian)
-- [ ] **GitHub deploy keys (2 min):** add the two read-only keys printed in the Nov 8 HQ chat (users `altscalp` →
-      repo alt-scalp, `altbtc15` → repo alt-btc15; "Allow write access" OFF). Until then the server copies can't pull updates.
-- [ ] Coin Toss: after the Nov 9 evening games, confirm the server windows are clean, then unload the laptop agent
-      (`launchctl unload ~/Library/LaunchAgents/com.idownham.altscalp.recorder.plist`)
-- [ ] Coin Toss: run the S2 analysis (overdue since Oct 24)
-- [ ] Osprey: decide whether to shut down the scanner and daily refresh (STOP is recorded)
-- [ ] Osprey: spot-check ~10 agent/auto-verified pairs yourself (no pair has been read first-hand yet; lower priority after STOP)
-- [ ] Bloodhound: start S1 (slot open since Oct 28)
-- [x] Resize droplet `alt-arb` to 1 vCPU / 2 GB / 50 GB ($12/mo) — done 2026-11-08; Coin Toss and Slot Machine recorders moved onto it
-- [x] App: Osprey daily-refresh scheduled task recreated in the new folder (2026-10-15)
+- [ ] **~Nov 21: Bloodhound extension.** Open a Bloodhound session to collect events through Nov 20 and run the pooled scorer once.
+- [ ] Fill in the "Ian's judgment: (to fill in)" lines in each project's journal and the HQ AI log.
+- [ ] Slot Machine: when R1 reaches 900 usable windows, open a Slot Machine session for the pre-registered maker analysis.
+- [ ] Optional: Osprey spot-check of auto-verified pairs (the Nov 10 wrong-game find shows why it matters, but the project is done).
+- [x] Coin Toss S2 run: STOP (2026-11-09) · recording stopped and archived (2026-11-10)
+- [x] Osprey shut down and archived (2026-11-10)
+- [x] Bloodhound S1 started, model frozen, test scored once (2026-11-09)
+- [x] GitHub deploy keys added for alt-scalp and alt-btc15 (2026-11-09)
+- [x] Coin Toss server windows verified clean (Nov 9 evening)
+- [x] Resize droplet `alt-arb` to 1 vCPU / 2 GB / 50 GB ($12/mo) — done 2026-11-08
+- [x] App: Osprey daily-refresh scheduled task recreated in the new folder (2026-10-15); disabled 2026-11-10
 - [x] Osprey: Kalshi 0.07 fee base confirmed against the fee schedule PDF (32b1407, 2026-10-13)
 - [x] Slot Machine: stopped at S1 (2026-10-14), then reopened the same day for the R1 recorder.
 - [x] Slot Machine: maker pre-registration approved as written, plus clarifications 1–7 (2026-10-14)

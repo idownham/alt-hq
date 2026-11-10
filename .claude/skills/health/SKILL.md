@@ -1,6 +1,6 @@
 ---
 name: health
-description: Check the health of every running alt project (Osprey droplet scanner + daily refresh, Coin Toss recorder, Slot Machine recorder, laptop disk, git sync) and print one green/red board. Use when Ian types /health or asks if everything is running.
+description: Check the health of every running alt project (the shared droplet and Slot Machine's recorder on it, the stopped Osprey and Coin Toss services, laptop disk, git sync) and print one green/red board. Use when Ian types /health or asks if everything is running.
 ---
 
 # /health — portfolio health board
@@ -15,25 +15,28 @@ old `alt-*` name (or `~/code/alt-arb` for Osprey) and report it as 🔴 — some
 
 ## Checks (run them all, even if one fails)
 
-1. **Osprey — droplet scanner + daily refresh**
-   `cd project-osprey && .venv/bin/python -m altarb.status` (exit 0 = healthy, 1 = needs attention).
-   Needs `DROPLET_HOST` in `project-osprey/.env`. Report: scanner active?, last scan age, errors last hour,
-   droplet disk %, last daily refresh time/result and whether it reached GitHub, games "needs review".
-   Also check the daily-refresh scheduled task ran today (its log/run record) — it runs on the laptop.
+Since 2026-11-10 only **Slot Machine's recorder** is supposed to run. Osprey (STOP, shut down 2026-11-10) and Coin Toss
+(STOP at S2, recording stopped 2026-11-10) are off on purpose; check they *stay* off. The droplet address is
+`DROPLET_HOST` in `project-osprey/.env` (never print it). Use `ssh -o BatchMode=yes "$H" '…'`.
 
-2. **Coin Toss — kickoff recorder (laptop)**
-   `launchctl list | grep com.idownham.altscalp.recorder` (loaded? last exit status 0?).
-   `cd project-coin-toss && .venv/bin/altscalp status` → games recorded (CLEAN / not clean), counted vs the
-   20-game target (≥ 5 per league), next scheduled window, any gaps.
+1. **Droplet — disk and clock** (the main guard now)
+   `df -h /` and `timedatectl show -p NTPSynchronized`. 🔴 under **5 GB free**, 🟡 under 10 GB. Also report
+   `du -sh /opt/alt-btc15/data` and days left at the current growth (~0.9–1.5 GB/day).
+   Nothing is deleted automatically. If space is low, raise it with Ian (options: stop R1 once it has 900 usable windows,
+   or add a DigitalOcean volume).
 
-3. **Slot Machine — R1 order-book recorder (laptop)**
-   `launchctl list | grep com.idownham.slot.recorder` (loaded? last exit 0?).
-   Freshness: time of the newest recorded snapshot/trade (newest file or row in its data store) — healthy if
-   < 5 min old. Data size today vs the ~1–3 GB/day estimate. If the project has a `status` command, use it instead.
+2. **Slot Machine — R1 order-book recorder (droplet)**
+   `systemctl is-active alt-btc15-recorder` and
+   `cd /opt/alt-btc15 && runuser -u altbtc15 -- .venv/bin/python -m slot.recorder status --db /opt/alt-btc15/data/recorder/book.sqlite`
+   → last book age (🟢 under 5 min), gaps, errors and rate-limit pauses in the last 24 h.
+
+3. **Stopped services stay stopped**
+   `systemctl is-active altarb-scanner altarb-update.timer altscalp-recorder altscalp-update.timer` should all be
+   `inactive`. On the laptop, `launchctl list | grep idownham` should show nothing, and the Osprey daily-refresh scheduled
+   task should be disabled. Anything running again is 🟡: report it, don't stop it.
 
 4. **Laptop**
-   `df -h ~` (warn under 50 GB free), and whether the Mac slept through any scheduled Coin Toss window today
-   (from the recorder's gap log).
+   `df -h ~` (warn under 50 GB free).
 
 5. **Git sync (every repo: HQ + all project folders)**
    `git status --short` and `git log origin/main..HEAD --oneline` after `git fetch -q`. Flag uncommitted work or
@@ -45,12 +48,11 @@ One board, then a short "Needs you" list (empty is good):
 
 ```
 alt health — <date time CT>
-Project        Service                  Status  Last activity        Note
-Osprey         droplet scanner          🟢/🔴   scan 3 min ago       0 errors/h, disk 41%
-Osprey         daily pair refresh       🟢/🟡   today 09:02, pushed  2 games need review
-Coin Toss      kickoff recorder         🟢/🔴   next window 18:30    7/20 counted (NFL 2, NBA 0, NHL 5)
-Slot Machine   R1 book recorder         🟢/🔴   snapshot 4 s ago     1.8 GB today
-Laptop         disk / sleep             🟢/🟡   612 GB free          no missed windows
+Area           Service                  Status  Last activity        Note
+Droplet        disk / clock             🟢/🟡/🔴 41 GB free           ~40 days left, NTP ok
+Slot Machine   R1 book recorder         🟢/🔴   book 2 s ago         0 gaps, 0 errors (24 h)
+Stopped        Osprey, Coin Toss        🟢/🟡   all inactive         —
+Laptop         disk                     🟢/🟡   612 GB free          —
 Git            all repos                🟢/🟡   clean                —
 Needs you: …
 ```

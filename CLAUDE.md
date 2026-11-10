@@ -13,10 +13,10 @@ here apply everywhere.
 ## Projects
 | Folder | Code name | Status / stage | Own rules |
 |---|---|---|---|
-| `project-osprey/` (repo alt-arb) | Project Osprey | **Close-out: Decision A = STOP (2026-10-28)**; scanner still running pending owner decision | `project-osprey/CLAUDE.md` |
-| `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | S1 recording (**droplet since 2026-11-09**); S2 analysis overdue | `project-coin-toss/CLAUDE.md` |
+| `project-osprey/` (repo alt-arb) | Project Osprey | **Done: STOP (2026-10-28); shut down 2026-11-10** | `project-osprey/CLAUDE.md` |
+| `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | **Done: STOP at S2 (2026-11-09); recording stopped 2026-11-10** | `project-coin-toss/CLAUDE.md` |
 | `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (droplet since 2026-11-09)** for a future maker test | `project-slot-machine/CLAUDE.md` |
-| `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **S0 started early 2026-10-14** (owner decision): read-only research only, no running services until a slot opens (~Oct 22 or Osprey STOP); criteria v2 confirmed 2026-10-14 | `project-bloodhound/CLAUDE.md` |
+| `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **S1: model frozen; test INCONCLUSIVE (2026-11-09) → pooled extension scored once ~Nov 21** (hand-run reads, no services) | `project-bloodhound/CLAUDE.md` |
 Local folders use code names (renamed 2026-10-14); GitHub repo names are unchanged. Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
 
 **Status site (HQ sessions only):** Ian's plain-English briefing page is `docs/site/index.html`, published as a private
@@ -42,17 +42,14 @@ skill (before the wrap-up commit), and so does any time Ian asks. Project sessio
 | Polymarket US public REST (~30 req/min **per IP**, then 10 s block) | Osprey only | Droplet |
 - Coin Toss must not call Polymarket from the droplet. Any new project that needs Polymarket must run from a
   different IP or coordinate with Osprey first.
-- Since 2026-11-09 the droplet `alt-arb` (1 vCPU / 2 GB / 50 GB, resized 2026-11-08) runs all three recorders/scanners,
-  each with its own Linux user, `/opt` folder and systemd unit. Read-only, no keys. Slot Machine keeps ~1 book request/s,
-  paced trade slices and a 10 s pause on any 429. Any live phase still needs its own server and keys.
-- Running services: **droplet** — Osprey scanner + 15-min update timer (`altarb-scanner`, user `altarb`, `/opt/alt-arb`);
-  Coin Toss recorder + 15-min update timer (`altscalp-recorder`, user `altscalp`, `/opt/alt-scalp`); Slot Machine recorder
-  (`alt-btc15-recorder`, user `altbtc15`, `/opt/alt-btc15`). The Coin Toss and Slot Machine copies were installed from git
-  bundles; they pull from GitHub once their read-only deploy keys are added. **Laptop** — Osprey daily pair refresh (Claude
-  desktop scheduled task, 9 am, runs in `~/code/alt/project-osprey`); Coin Toss's launchd agent as a backup until the first
-  server window is verified (then unloaded). Moving a project folder also means updating that scheduled task's folder
-  (recreate the task; see Osprey's journal 2026-10-15).
-- Disk: Slot Machine's tape grows ~1.0–1.5 GB/day on the droplet; check `df -h /` in health checks (alert under 5 GB free).
+- The droplet `alt-arb` (1 vCPU / 2 GB / 50 GB, resized 2026-11-08) gives each project its own Linux user, `/opt` folder
+  and systemd unit. Read-only, no keys. Any live phase still needs its own server and keys.
+- Running services (since 2026-11-10): **droplet**: Slot Machine recorder only (`alt-btc15-recorder`, user `altbtc15`,
+  `/opt/alt-btc15`; ~1 book request/s, paced trade slices, 10 s pause on any 429). **Disabled, code and data kept:** Osprey
+  scanner + update timer (`/opt/alt-arb`), Coin Toss recorder + update timer (`/opt/alt-scalp`). **Laptop:** nothing
+  scheduled (Osprey's daily-refresh task is disabled, launchd agents unloaded). Bloodhound runs hand-started, paced batches only.
+  Moving a project folder means updating any scheduled task's folder (recreate the task; see Osprey's journal 2026-10-15).
+- Disk: Slot Machine's tape grows ~0.9–1.5 GB/day on the droplet. `/health` alerts under 5 GB free.
 
 ## Class evidence (applies to every project)
 - Each project keeps `docs/journal.md`: dated entries with work, commit links, observation/test, decision, and
