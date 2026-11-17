@@ -80,9 +80,6 @@ Work: Osprey and Coin Toss services stopped and their data archived. `/health` w
 episodes came from a wrong-game pair the daily auto-verifier approved ("Kentucky" ≈ "Western Kentucky") → the pair was
 un-verified and documented → the verdict stands, and it's the project's clearest real example of its #1 risk.
 
-**2026-11-16 · Class · Checkpoint 2 (early prototype, due Oct 25, late) · HQ**
-Work: planning chat drafted the checkpoint 2 update from the repos (`docs/class/02-early-prototype.md`), covering Oct 11–25 only, with dated commit links.
-AI use + Ian's judgment: *Ian to fill in after review (accepted / revised / rejected).*
 
 ---
 
