@@ -2,7 +2,7 @@
 
 **Ian Downham** · solo project · Founder Documentary, Fall 2026 · Checkpoint 2 (due Oct 25)
 
-**Submitted late, on Nov __.** This covers work from Oct 11 to Oct 25. Nothing is backdated. Anything that happened
+**Submitted late, on Nov 17.** This covers work from Oct 11 to Oct 25. Nothing is backdated. Anything that happened
 after Oct 25 is marked.
 
 ## What I built
@@ -58,5 +58,4 @@ recorder; I overrode that. It recommended stopping Slot Machine; I agreed and de
 | Oct 18 | Slot Machine | Decision to move recorders off the laptop | [27ea4f3](https://github.com/idownham/alt-btc15/commit/27ea4f3) |
 | Oct 14 | Bloodhound | Research done, pass/fail rules confirmed | [72d6b1b](https://github.com/idownham/alt-edge/commit/72d6b1b), [5db3067](https://github.com/idownham/alt-edge/commit/5db3067) |
 
-Shared journal, source index and AI log: `docs/journal.md` in alt-hq.
-Screenshots (recorded Nov __, showing the Oct work): *add file names here.*
+Shared journal, source index and AI log: `docs/journal.md` in the alt-hq repository. Code and project journals: alt-arb (Osprey), alt-scalp (Coin Toss), alt-btc15 (Slot Machine), alt-edge (Bloodhound). All private on GitHub; instructor invited.
