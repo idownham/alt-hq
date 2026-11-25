@@ -149,5 +149,5 @@ for line in lines:
     p(s, color=MUTED if s.startswith("**Ian Downham**") or s.startswith("**Submitted") else None)
 
 doc.core_properties.author = "Ian Downham"
-doc.core_properties.title = "Early Prototype Update (Checkpoint 2)"
+doc.core_properties.title = sys.argv[3] if len(sys.argv) > 3 else "Checkpoint update"
 doc.save(OUT)
