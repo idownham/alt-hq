@@ -137,7 +137,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h1>Alt Projects Briefing</h1>
   <p class="lede">Four small experiments that each ask one question: <strong>can a careful student find a real, repeatable edge in prediction markets</strong>, or are the prices already fair? Everything is test-and-measure. No real money is being traded.</p>
   <div class="stamp">
-    <span>Last updated: Mon Nov 9, 2026 · about 9:45 pm CT</span>
+    <span>Last updated: Wed Nov 25, 2026 · about 1:15 am CT</span>
     <span>Source: the four project folders + HQ</span>
   </div>
   <div class="rule-box">
@@ -149,13 +149,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
 <section class="stack" aria-labelledby="h-now">
   <span class="eyebrow">Right now</span>
   <h2 id="h-now">Is everything running?</h2>
-  <p class="muted">Checked Mon Nov 9, about 9:20–9:45 pm CT. Only one thing is supposed to run now.</p>
+  <p class="muted">Checked Tue Nov 24, about 11:47 pm CT. Only one thing is supposed to run now.</p>
   <div class="health">
-    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (cloud server)</span><span class="note">Recording around the clock. It's the only service left on the server.</span><span class="pill good">Running</span></div>
-    <div class="hrow"><span class="what">Cloud server disk</span><span class="note">41 GB free. The recorder adds about 1–1.5 GB a day, so that's enough past Dec 4. The /health check warns if it drops under 5 GB.</span><span class="pill good">Plenty of room</span></div>
+    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (cloud server)</span><span class="note">Recording around the clock: about 1,525 15-minute windows so far. A few short gaps (5 minutes in all over the last day). It's the only service left on the server.</span><span class="pill good">Running</span></div>
+    <div class="hrow"><span class="what">Cloud server disk</span><span class="note">21 GB free. The recorder adds about 1–1.5 GB a day, so that's roughly 2 weeks. The /health check warns if it drops under 5 GB. Once the shopkeeper test is done, the recorder can probably stop.</span><span class="pill warn">About 2 weeks left</span></div>
     <div class="hrow"><span class="what">Osprey (robot + 9 am update)</span><span class="note">Switched off tonight, after its verdict. All its data is saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
     <div class="hrow"><span class="what">Coin Toss game recorder</span><span class="note">Switched off tonight, after its verdict. Its first evening on the server was clean (12 of 12 games). Data saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
-    <div class="hrow"><span class="what">Bloodhound</span><span class="note">No robots. It only does hand-started, slow downloads. Next run is around Nov 21.</span><span class="pill idle">Waiting</span></div>
+    <div class="hrow"><span class="what">Bloodhound</span><span class="note">Finished (Nov 25). Nothing runs.</span><span class="pill idle">Done</span></div>
   </div>
 </section>
 
@@ -238,15 +238,15 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-slot">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 3 · repo alt-btc15</span><h3 id="h-slot">Slot Machine</h3></div>
-      <span class="pill good">Recording on the server</span>
+      <span class="pill good">Shopkeeper test running</span>
     </div>
     <p class="idea">Kalshi runs a new "Will Bitcoin be up or down?" market every 15 minutes. Is there a way to beat it?</p>
     <p class="analogy">Round 1 tried to beat it by grabbing prices that were already posted. That failed. Round 2 tries the shopkeeper approach instead: post your own prices and wait for people to come to you.</p>
     <ol class="track" aria-label="Stages">
       <li class="done">S1 · Test 4 strategies on past data</li>
       <li class="done">Result: none worked</li>
-      <li class="now">R1 · Record live order books</li>
-      <li>Shopkeeper test (after 900 usable windows)</li>
+      <li class="done">R1 · Record live order books</li>
+      <li class="now">Shopkeeper test (started Nov 25)</li>
     </ol>
     <div class="cols">
       <div>
@@ -259,7 +259,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       </div>
       <div>
         <h4>What happens next</h4>
-        <p>Keep recording until there are 900 usable windows (about 10 days of nearly full coverage). Then run the shopkeeper test exactly as written in advance.</p>
+        <p>The shopkeeper test started on Nov 25 in a Slot Machine chat. It joins the laptop and server recordings, counts the usable windows before looking at any results, then runs the test exactly as written in advance. No result yet.</p>
       </div>
     </div>
     <div class="gate">
@@ -272,7 +272,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-blood">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 4 · repo alt-edge</span><h3 id="h-blood">Bloodhound</h3></div>
-      <span class="pill warn">Too close to call yet</span>
+      <span class="pill idle">Finished: no edge</span>
     </div>
     <p class="idea">"Will Trump say ___ in his speech?" markets. Does doing your homework (old transcripts, the fine print) beat the crowd's gut feel?</p>
     <p class="analogy">Unlike the others, this is a homework race, not a speed race. If Trump has said "tariff" in 9 of his last 10 rallies, and the market prices it at 60¢, the homework says that's too cheap.</p>
@@ -280,16 +280,16 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <li class="done">S0 · Research + set the rules</li>
       <li class="done">S1 · Build + freeze the predictor</li>
       <li class="done">Test: too close to call</li>
-      <li class="now">Extra round (~Nov 21)</li>
+      <li class="done">Extra round: stop (Nov 25)</li>
     </ol>
     <div class="cols">
       <div>
-        <h4>Test result (Nov 9, not a conclusion)</h4>
-        <p>60 speeches, 1,640 questions. The predictor's Brier score was 0.1614 and the market's was 0.1631, so the predictor was a little better. But the difference is small enough that it could be luck, which makes it <strong>inconclusive</strong>.</p>
+        <h4>Result (Nov 25)</h4>
+        <p>Test plus the extra round together: 71 speeches, 2,043 questions. The predictor's Brier score was 0.1568 and the market's was 0.1580. That's a hair better, but still small enough to be luck. The rules say "still unclear" counts as <strong>stop</strong>, and you confirmed it. No money was risked.</p>
       </div>
       <div>
-        <h4>What happens next</h4>
-        <p>The rules written in advance allow exactly one extra round: score the same frozen predictor on new speeches through Nov 20, pooled with the test. That gives pass or stop, and "still unclear" counts as stop. It can run from Nov 21. Vance was dropped for this round.</p>
+        <h4>A snag along the way</h4>
+        <p>The transcript website (Factbase) was redesigned, which broke downloads for the last 2 of 13 new speeches. You chose to score with the locked tools as they were, so those 2 dropped out under the rules. That choice was written down before any result was seen. The scoring ran on Nov 25, three days after the planned Nov 22 deadline, because of the snag.</p>
       </div>
       <div>
         <h4>Why it's fair</h4>
@@ -307,10 +307,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Your list</span>
   <h2 id="h-todo">What's waiting on you</h2>
   <ul class="todo">
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Around Nov 21: Bloodhound's extra round.</strong><div class="why">Open a Bloodhound chat to collect speeches through Nov 20 and run the final scoring once. That decides pass or stop before the Nov 22 class date.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Fill in your judgment lines in the journals</strong> (accepted, revised or rejected, and why).<div class="why">Several entries end with "to fill in", including tonight's close-out.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Slot Machine: when it has 900 usable windows, run the shopkeeper test.</strong><div class="why">Probably about 10 days of full recording. Ask in a Slot Machine chat.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Plan the story for Nov 22.</strong><div class="why">You have two clean "no edge" results, one fake-opportunity lesson, and one result still open.</div></div></li>
+        <li><span class="box" aria-hidden="true"></span><div><strong>Fill in your judgment lines in the journals</strong> (accepted, revised or rejected, and why).<div class="why">Several entries end with "to fill in", including tonight's close-out.</div></div></li>
+    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Slot Machine: review the shopkeeper test result when it's ready, and confirm the verdict.</strong><div class="why">It's running now. Then decide whether to stop the recorder; the server disk lasts about 2 more weeks.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Plan the rough cut for Dec 1.</strong><div class="why">You have three clean "no edge" results, a fake-opportunity lesson, a website-change snag, and one test still running.</div></div></li>
   </ul>
 </section>
 
@@ -318,10 +317,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Calendar</span>
   <h2 id="h-dates">What's coming up</h2>
   <ol class="timeline">
-    <li><span class="d">Nov 8</span><span class="t">Server upgraded; recorders moved onto it.</span></li>
-    <li class="today"><span class="d">Nov 9–10</span><span class="t">Today. Coin Toss: stop. Bloodhound: test too close to call. Osprey and Coin Toss switched off.</span></li>
-    <li><span class="d">~Nov 21</span><span class="t">Bloodhound: extra round scored once, then pass or stop.</span></li>
     <li class="class"><span class="d">Nov 22</span><span class="t">Class: iteration + story.</span></li>
+    <li class="today"><span class="d">Nov 25</span><span class="t">Today. Bloodhound: stop. Slot Machine's shopkeeper test started.</span></li>
+    <li><span class="d">~Dec 6–11</span><span class="t">At the current pace, the server disk hits its 5 GB warning, unless the recorder is stopped first.</span></li>
     <li class="class"><span class="d">Dec 1 · Dec 4</span><span class="t">Class: rough cuts, then the final package.</span></li>
   </ol>
 </section>
@@ -330,6 +328,14 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <span class="eyebrow">Change log</span>
   <h2 id="h-changes">What changed recently</h2>
   <div class="changes">
+    <div class="change">
+      <span class="when">Nov 25</span>
+      <ul class="plain">
+        <li><strong>Bloodhound: stop.</strong> After the extra round, the predictor was still only a hair better than the market, not clearly better. You confirmed it.</li>
+        <li><strong>A website change got in the way:</strong> the transcript site was redesigned, so 2 speeches dropped out by your choice (written down before scoring).</li>
+        <li><strong>Slot Machine's shopkeeper test started.</strong> The recorder keeps running for now.</li>
+      </ul>
+    </div>
     <div class="change">
       <span class="when">Nov 9–10</span>
       <ul class="plain">
@@ -343,12 +349,6 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <ul class="plain">
         <li><strong>The cloud server was upgraded</strong> ($12/month: 2 GB memory, 50 GB disk), and the recorders moved onto it.</li>
         <li>All the journals were caught up.</li>
-      </ul>
-    </div>
-    <div class="change">
-      <span class="when">Oct 28</span>
-      <ul class="plain">
-        <li><strong>Osprey's verdict: stop.</strong> 0 real opportunities in 15 days.</li>
       </ul>
     </div>
   </div>

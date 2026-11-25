@@ -81,6 +81,13 @@ episodes came from a wrong-game pair the daily auto-verifier approved ("Kentucky
 un-verified and documented → the verdict stands, and it's the project's clearest real example of its #1 risk.
 
 
+**2026-11-25 · Bloodhound S1 = STOP · [7b7ac57](https://github.com/idownham/alt-edge/commit/7b7ac57), [7418652](https://github.com/idownham/alt-edge/commit/7418652), [8edfc64](https://github.com/idownham/alt-edge/commit/8edfc64), [e4b65be](https://github.com/idownham/alt-edge/commit/e4b65be)**
+**Iteration (evidence → decision → consequence):** collecting the one extension hit a Factbase redesign (calendar pages
+404, transcript text gone), affecting 2 of 13 extension events → Ian chose to score with the frozen pipeline as-is (option
+B), recorded before any outcome was read → pooled 71 events / 2,043 markets: Brier 0.1568 vs 0.1580, CI [−0.0035, +0.0012]
+includes 0 → STOP by the pre-registered rule, confirmed by Ian. Scored Nov 25, after the Nov 22 time box. Same day:
+Slot Machine's R1 maker analysis started; a security scan of the full history of all five repos (Nov 17, before Ian planned to make them public) found no secrets.
+
 ---
 
 ## AI log
@@ -94,6 +101,7 @@ un-verified and documented → the verdict stands, and it's the project's cleare
 | 10-28 | Claude Code · Osprey Decision A | "Yes, record STOP" | Report + episode/error queries; STOP entry with the biases listed | **Accepted** STOP without changing criteria | [ae52199](https://github.com/idownham/alt-arb/commit/ae52199) |
 | 11-08 | Claude Code (HQ chat) · server move + records | "Can you go move everything, update everything, and then backlog everything into github" | Both recorders deployed on the droplet; journals, decisions, portfolio and site updated from logs and data | **Accepted** the $12 plan (chose it over $18). *Ian to fill in on the rest* | HQ decisions 2026-11-08 |
 | 11-09 | Claude Code (HQ chat) · close-out | "Continue with what you think I should do. Take over" | Osprey + Coin Toss stopped and archived; wrong-game pair found and un-verified; /health rewritten | **Delegated** ("take over"). *Ian to fill in after review* | HQ decisions 2026-11-09/10 |
+| 11-25 | Claude Code (HQ chat + Bloodhound session) · extension | "Bloodhound scoring" · "B: score now" | Extension collected; Factbase block surfaced with options A/B/C; scored once → STOP | **Chose B** (recommended); **confirmed STOP** | [e4b65be](https://github.com/idownham/alt-edge/commit/e4b65be) |
 
 *Exact prompts weren't saved for the early entries; excerpts are paraphrased from the commits. From now on, paste a
 one-line real excerpt.*

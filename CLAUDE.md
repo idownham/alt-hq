@@ -15,8 +15,8 @@ here apply everywhere.
 |---|---|---|---|
 | `project-osprey/` (repo alt-arb) | Project Osprey | **Done: STOP (2026-10-28); shut down 2026-11-10** | `project-osprey/CLAUDE.md` |
 | `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | **Done: STOP at S2 (2026-11-09); recording stopped 2026-11-10** | `project-coin-toss/CLAUDE.md` |
-| `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (droplet since 2026-11-09)** for a future maker test | `project-slot-machine/CLAUDE.md` |
-| `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **S1: model frozen; test INCONCLUSIVE (2026-11-09) → pooled extension scored once ~Nov 21** (hand-run reads, no services) | `project-bloodhound/CLAUDE.md` |
+| `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (droplet since 2026-11-09); maker analysis started 2026-11-25** | `project-slot-machine/CLAUDE.md` |
+| `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **Done: STOP at S1 (pooled extension scored 2026-11-25, Ian confirmed)** (no services) | `project-bloodhound/CLAUDE.md` |
 Local folders use code names (renamed 2026-10-14); GitHub repo names are unchanged. Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
 
 **Status site (HQ sessions only):** Ian's plain-English briefing page is `docs/site/index.html`, published as a private
