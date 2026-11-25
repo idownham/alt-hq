@@ -96,6 +96,8 @@ the variant chosen on train (M1, 3¢ margin) lost on test (capped −$65.12, CI 
 and disabled 14:35 UTC by the HQ chat at Ian's direction ("Stop it here"), after the Slot Machine session's own permission
 check blocked the stop. All four projects are now finished with no demonstrated edge; nothing runs.
 
+**2026-11-25 · Class · Checkpoint 3 (working build and test, due Nov 8) submitted late on Nov 25:** `docs/class/03-working-build.docx`. All five repos made public Nov 25 so evidence links work.
+
 ---
 
 ## AI log
@@ -107,8 +109,8 @@ check blocked the stop. All four projects are now finished with no demonstrated 
 | 10-14 | Claude Code · R1 maker pre-registration | draft the test before any data | Draft + 4 optional changes flagged | **Accepted as written**, declining the 4 optional changes | [8f98e28](https://github.com/idownham/alt-btc15/commit/8f98e28) |
 | 10-14 | Claude Code · concept brief | draft the Oct 11 brief from the repos | This checkpoint's brief | *Ian to fill in: accepted / revised / rejected* | `docs/class/01-concept-brief.md` |
 | 10-28 | Claude Code · Osprey Decision A | "Yes, record STOP" | Report + episode/error queries; STOP entry with the biases listed | **Accepted** STOP without changing criteria | [ae52199](https://github.com/idownham/alt-arb/commit/ae52199) |
-| 11-08 | Claude Code (HQ chat) · server move + records | "Can you go move everything, update everything, and then backlog everything into github" | Both recorders deployed on the droplet; journals, decisions, portfolio and site updated from logs and data | **Accepted** the $12 plan (chose it over $18). *Ian to fill in on the rest* | HQ decisions 2026-11-08 |
-| 11-09 | Claude Code (HQ chat) · close-out | "Continue with what you think I should do. Take over" | Osprey + Coin Toss stopped and archived; wrong-game pair found and un-verified; /health rewritten | **Delegated** ("take over"). *Ian to fill in after review* | HQ decisions 2026-11-09/10 |
+| 11-08 | Claude Code (HQ chat) · server move + records | "Can you go move everything, update everything, and then backlog everything into github" | Both recorders deployed on the droplet; journals, decisions, portfolio and site updated from logs and data | Accepted. I chose the $12 plan and checked the server was running after the move. | HQ decisions 2026-11-08 |
+| 11-09 | Claude Code (HQ chat) · close-out | "Continue with what you think I should do. Take over" | Osprey + Coin Toss stopped and archived; wrong-game pair found and un-verified; /health rewritten | Accepted. I reviewed the STOP verdicts and agreed with shutting Osprey and Coin Toss down. | HQ decisions 2026-11-09/10 |
 | 11-25 | Claude Code (HQ chat + Bloodhound session) · extension | "Bloodhound scoring" · "B: score now" | Extension collected; Factbase block surfaced with options A/B/C; scored once → STOP | **Chose B** (recommended); **confirmed STOP** | [e4b65be](https://github.com/idownham/alt-edge/commit/e4b65be) |
 | 11-25 | Claude Code (HQ chat + Slot Machine session) · R1 maker test | "start the Slot Machine analysis too" · "Confirm, stop recorder" · "Stop it here" | Data merged, extension committed, train selection committed, test run once → FAIL; recorder stopped | **Confirmed FAIL**; chose to stop the recorder | [28c6402](https://github.com/idownham/alt-btc15/commit/28c6402) |
 
@@ -132,4 +134,8 @@ one-line real excerpt.*
 
 | Date | File / link | Shows | Sizzle? |
 |---|---|---|---|
-| | | | |
+| 2026-11-25 | `docs/captures/2026-11-25-status-site.png` | Full Alt Projects Briefing page: all four projects finished, nothing running (offscreen render of `docs/site/index.html`) | |
+| 2026-11-25 | `docs/captures/2026-11-25-osprey-decisions.png` | Osprey decision log on GitHub: wrong-game $30k pair (Nov 10) and Decision A = STOP (Oct 28) | |
+| 2026-11-25 | `docs/captures/2026-11-25-cointoss-s2-results.png` | Coin Toss S2 results on GitHub: median 0 reversals vs ≥ 3 needed → STOP | |
+| 2026-11-25 | `docs/captures/2026-11-25-slot-r1-results.png` | Slot Machine R1 results on GitHub: M1 −$65.12 on test → FAIL; spread earned vs adverse selection | |
+| 2026-11-25 | `docs/captures/2026-11-25-bloodhound-extension-results.png` | Bloodhound pooled extension on GitHub: Brier 0.1568 vs 0.1580, CI includes 0 → STOP | |
