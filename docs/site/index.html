@@ -137,7 +137,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h1>Alt Projects Briefing</h1>
   <p class="lede">Four small experiments that each ask one question: <strong>can a careful student find a real, repeatable edge in prediction markets</strong>, or are the prices already fair? Everything is test-and-measure. No real money is being traded.</p>
   <div class="stamp">
-    <span>Last updated: Wed Nov 25, 2026 · about 1:15 am CT</span>
+    <span>Last updated: Wed Nov 25, 2026 · about 8:45 am CT</span>
     <span>Source: the four project folders + HQ</span>
   </div>
   <div class="rule-box">
@@ -149,12 +149,12 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
 <section class="stack" aria-labelledby="h-now">
   <span class="eyebrow">Right now</span>
   <h2 id="h-now">Is everything running?</h2>
-  <p class="muted">Checked Tue Nov 24, about 11:47 pm CT. Only one thing is supposed to run now.</p>
+  <p class="muted">Checked Wed Nov 25, about 8:35 am CT. Nothing is supposed to run now: all four projects are finished.</p>
   <div class="health">
-    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (cloud server)</span><span class="note">Recording around the clock: about 1,525 15-minute windows so far. A few short gaps (5 minutes in all over the last day). It's the only service left on the server.</span><span class="pill good">Running</span></div>
-    <div class="hrow"><span class="what">Cloud server disk</span><span class="note">21 GB free. The recorder adds about 1–1.5 GB a day, so that's roughly 2 weeks. The /health check warns if it drops under 5 GB. Once the shopkeeper test is done, the recorder can probably stop.</span><span class="pill warn">About 2 weeks left</span></div>
-    <div class="hrow"><span class="what">Osprey (robot + 9 am update)</span><span class="note">Switched off tonight, after its verdict. All its data is saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
-    <div class="hrow"><span class="what">Coin Toss game recorder</span><span class="note">Switched off tonight, after its verdict. Its first evening on the server was clean (12 of 12 games). Data saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
+    <div class="hrow"><span class="what">Slot Machine Bitcoin recorder (cloud server)</span><span class="note">Switched off this morning (Nov 25), after its verdict. All its data is kept on the server, and the laptop has a copy of nearly all of it (the last few hours are being copied).</span><span class="pill idle">Off on purpose</span></div>
+    <div class="hrow"><span class="what">Cloud server disk</span><span class="note">20 GB free, and nothing is adding to it any more. The server still costs $12 a month; keeping or closing it is your call.</span><span class="pill good">Fine</span></div>
+    <div class="hrow"><span class="what">Osprey (robot + 9 am update)</span><span class="note">Switched off Nov 10, after its verdict. All its data is saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
+    <div class="hrow"><span class="what">Coin Toss game recorder</span><span class="note">Switched off Nov 10, after its verdict. Its first evening on the server was clean (12 of 12 games). Data saved on the laptop.</span><span class="pill idle">Off on purpose</span></div>
     <div class="hrow"><span class="what">Bloodhound</span><span class="note">Finished (Nov 25). Nothing runs.</span><span class="pill idle">Done</span></div>
   </div>
 </section>
@@ -238,7 +238,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <article class="dossier" aria-labelledby="h-slot">
     <div class="dhead">
       <div class="names"><span class="eyebrow">Project 3 · repo alt-btc15</span><h3 id="h-slot">Slot Machine</h3></div>
-      <span class="pill good">Shopkeeper test running</span>
+      <span class="pill idle">Finished: no edge</span>
     </div>
     <p class="idea">Kalshi runs a new "Will Bitcoin be up or down?" market every 15 minutes. Is there a way to beat it?</p>
     <p class="analogy">Round 1 tried to beat it by grabbing prices that were already posted. That failed. Round 2 tries the shopkeeper approach instead: post your own prices and wait for people to come to you.</p>
@@ -246,24 +246,25 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <li class="done">S1 · Test 4 strategies on past data</li>
       <li class="done">Result: none worked</li>
       <li class="done">R1 · Record live order books</li>
-      <li class="now">Shopkeeper test (started Nov 25)</li>
+      <li class="done">Shopkeeper test: fail (Nov 25)</li>
+      <li class="done">Switched off (Nov 25)</li>
     </ol>
     <div class="cols">
       <div>
-        <h4>Result so far (finished)</h4>
+        <h4>Round 1 result</h4>
         <p>12,690 past 15-minute markets, 61 strategy versions, final test run once. All four strategies lost money or broke even per trade (A −$0.81, B −$1.18, C −$0.27, D −$0.13). <strong>No edge.</strong> No money was risked.</p>
       </div>
       <div>
-        <h4>What happened</h4>
-        <p>On the laptop, the share of each day recorded swung from about 1% to 98% (Oct 19 – Nov 8) because it kept sleeping. A window only counts if 95% of it was recorded, so the rules pushed the end date back. Recording moved to the cloud server on Nov 8, and it's the only thing still running.</p>
+        <h4>Round 2 result (Nov 25)</h4>
+        <p>910 usable windows (Oct 14 – Nov 10). The shopkeeper strategy chosen on the first two-thirds <strong>lost money</strong> on the last third: −$65.12 within the daily limits. Its orders bought below fair value (about +$228), but they mostly filled just before the price moved against them (about −$371). The second idea couldn't be tested: the gap between buy and sell prices was almost always just 1¢. You confirmed: <strong>fail</strong>. No money was risked.</p>
       </div>
       <div>
-        <h4>What happens next</h4>
-        <p>The shopkeeper test started on Nov 25 in a Slot Machine chat. It joins the laptop and server recordings, counts the usable windows before looking at any results, then runs the test exactly as written in advance. No result yet.</p>
+        <h4>Why the end date moved</h4>
+        <p>The laptop kept sleeping, so only 347 windows in the first planned range were complete enough to count. The rules written in advance said to push the end date back a whole day at a time until there were 900. That was done and saved before any results were looked at.</p>
       </div>
     </div>
     <div class="gate">
-      <b>How it gets decided</b>
+      <b>How it was decided</b>
       <p>At least 900 usable 15-minute windows. The first two-thirds are used to choose a strategy, and the last third tests it once. It passes only if the test makes money and we're 95% sure that isn't luck. Even a pass doesn't allow trading. That would need its own decision.</p>
     </div>
   </article>
@@ -308,8 +309,8 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h2 id="h-todo">What's waiting on you</h2>
   <ul class="todo">
         <li><span class="box" aria-hidden="true"></span><div><strong>Fill in your judgment lines in the journals</strong> (accepted, revised or rejected, and why).<div class="why">Several entries end with "to fill in", including tonight's close-out.</div></div></li>
-    <li class="urgent"><span class="box" aria-hidden="true"></span><div><strong>Slot Machine: review the shopkeeper test result when it's ready, and confirm the verdict.</strong><div class="why">It's running now. Then decide whether to stop the recorder; the server disk lasts about 2 more weeks.</div></div></li>
-    <li><span class="box" aria-hidden="true"></span><div><strong>Plan the rough cut for Dec 1.</strong><div class="why">You have three clean "no edge" results, a fake-opportunity lesson, a website-change snag, and one test still running.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Decide what to do with the cloud server after the class.</strong><div class="why">Nothing runs on it now, but it still costs $12 a month. You can keep it, or save a snapshot and close it after Dec 4.</div></div></li>
+    <li><span class="box" aria-hidden="true"></span><div><strong>Plan the rough cut for Dec 1.</strong><div class="why">You have four clean "no edge" results, a fake-opportunity lesson, a website-change snag, and a laptop-sleep lesson.</div></div></li>
   </ul>
 </section>
 
@@ -318,8 +319,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
   <h2 id="h-dates">What's coming up</h2>
   <ol class="timeline">
     <li class="class"><span class="d">Nov 22</span><span class="t">Class: iteration + story.</span></li>
-    <li class="today"><span class="d">Nov 25</span><span class="t">Today. Bloodhound: stop. Slot Machine's shopkeeper test started.</span></li>
-    <li><span class="d">~Dec 6–11</span><span class="t">At the current pace, the server disk hits its 5 GB warning, unless the recorder is stopped first.</span></li>
+    <li class="today"><span class="d">Nov 25</span><span class="t">Today. Bloodhound: stop. Slot Machine: fail, recorder switched off. All four projects finished.</span></li>
     <li class="class"><span class="d">Dec 1 · Dec 4</span><span class="t">Class: rough cuts, then the final package.</span></li>
   </ol>
 </section>
@@ -333,7 +333,8 @@ footer { font-size: 0.9rem; color: var(--muted); display: grid; gap: 6px; border
       <ul class="plain">
         <li><strong>Bloodhound: stop.</strong> After the extra round, the predictor was still only a hair better than the market, not clearly better. You confirmed it.</li>
         <li><strong>A website change got in the way:</strong> the transcript site was redesigned, so 2 speeches dropped out by your choice (written down before scoring).</li>
-        <li><strong>Slot Machine's shopkeeper test started.</strong> The recorder keeps running for now.</li>
+        <li><strong>Slot Machine: fail.</strong> The shopkeeper strategy lost money on data it hadn't seen (−$65.12). You confirmed it, and the last recorder was switched off.</li>
+        <li><strong>All four projects are finished</strong>, each with a clear "no edge" result. Nothing runs any more.</li>
       </ul>
     </div>
     <div class="change">

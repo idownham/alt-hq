@@ -1,6 +1,6 @@
 ---
 name: health
-description: Check the health of every running alt project (the shared droplet and Slot Machine's recorder on it, the stopped Osprey and Coin Toss services, laptop disk, git sync) and print one green/red board. Use when Ian types /health or asks if everything is running.
+description: Check the alt portfolio's health (the shared droplet's disk and clock, that every stopped service stays stopped, laptop disk, git sync) and print one green/red board. Use when Ian types /health or asks if everything is running.
 ---
 
 # /health — portfolio health board
@@ -15,30 +15,23 @@ old `alt-*` name (or `~/code/alt-arb` for Osprey) and report it as 🔴 — some
 
 ## Checks (run them all, even if one fails)
 
-Since 2026-11-10 only **Slot Machine's recorder** is supposed to run. Osprey (STOP, shut down 2026-11-10) and Coin Toss
-(STOP at S2, recording stopped 2026-11-10) are off on purpose; check they *stay* off. The droplet address is
+Since 2026-11-25 14:35 UTC **nothing** is supposed to run. Osprey (shut down 2026-11-10), Coin Toss (recording stopped
+2026-11-10) and Slot Machine (R1 recorder stopped 2026-11-25) are off on purpose; check they *stay* off. The droplet address is
 `DROPLET_HOST` in `project-osprey/.env` (never print it). Use `ssh -o BatchMode=yes "$H" '…'`.
 
-1. **Droplet — disk and clock** (the main guard now)
-   `df -h /` and `timedatectl show -p NTPSynchronized`. 🔴 under **5 GB free**, 🟡 under 10 GB. Also report
-   `du -sh /opt/alt-btc15/data` and days left at the current growth (~0.9–1.5 GB/day).
-   Nothing is deleted automatically. If space is low, raise it with Ian (options: stop R1 once it has 900 usable windows,
-   or add a DigitalOcean volume).
+1. **Droplet — disk and clock**
+   `df -h /` and `timedatectl show -p NTPSynchronized`. 🔴 under **5 GB free**, 🟡 under 10 GB (about 20 GB free when the
+   last recorder stopped; nothing should grow it now). Nothing is deleted automatically.
 
-2. **Slot Machine — R1 order-book recorder (droplet)**
-   `systemctl is-active alt-btc15-recorder` and
-   `cd /opt/alt-btc15 && runuser -u altbtc15 -- .venv/bin/python -m slot.recorder status --db /opt/alt-btc15/data/recorder/book.sqlite`
-   → last book age (🟢 under 5 min), gaps, errors and rate-limit pauses in the last 24 h.
-
-3. **Stopped services stay stopped**
-   `systemctl is-active altarb-scanner altarb-update.timer altscalp-recorder altscalp-update.timer` should all be
-   `inactive`. On the laptop, `launchctl list | grep idownham` should show nothing, and the Osprey daily-refresh scheduled
+2. **Stopped services stay stopped**
+   `systemctl is-active alt-btc15-recorder altarb-scanner altarb-update.timer altscalp-recorder altscalp-update.timer`
+   should all be `inactive`, and `systemctl is-enabled` the same units `disabled`. On the laptop, `launchctl list | grep idownham` should show nothing, and the Osprey daily-refresh scheduled
    task should be disabled. Anything running again is 🟡: report it, don't stop it.
 
-4. **Laptop**
+3. **Laptop**
    `df -h ~` (warn under 50 GB free).
 
-5. **Git sync (every repo: HQ + all project folders)**
+4. **Git sync (every repo: HQ + all project folders)**
    `git status --short` and `git log origin/main..HEAD --oneline` after `git fetch -q`. Flag uncommitted work or
    commits not pushed.
 
@@ -49,9 +42,8 @@ One board, then a short "Needs you" list (empty is good):
 ```
 alt health — <date time CT>
 Area           Service                  Status  Last activity        Note
-Droplet        disk / clock             🟢/🟡/🔴 41 GB free           ~40 days left, NTP ok
-Slot Machine   R1 book recorder         🟢/🔴   book 2 s ago         0 gaps, 0 errors (24 h)
-Stopped        Osprey, Coin Toss        🟢/🟡   all inactive         —
+Droplet        disk / clock             🟢/🟡/🔴 20 GB free           NTP ok
+Stopped        Osprey, Coin Toss, Slot  🟢/🟡   all inactive         —
 Laptop         disk                     🟢/🟡   612 GB free          —
 Git            all repos                🟢/🟡   clean                —
 Needs you: …

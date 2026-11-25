@@ -1,6 +1,6 @@
 # Portfolio
 
-*Last updated: 2026-11-25 (Bloodhound S1 = STOP after the pooled extension, confirmed by Ian; Slot Machine R1 maker analysis started). Update this file in an HQ session whenever a project changes stage or a milestone moves.*
+*Last updated: 2026-11-25 (all four projects finished: Bloodhound S1 = STOP; Slot Machine R1 maker test FAIL, confirmed by Ian, recorder stopped; nothing runs on the droplet). Update this file in an HQ session whenever a project changes stage or a milestone moves.*
 
 ## Status
 | Project | Stage | Running where | Next milestone | Gate |
@@ -8,13 +8,18 @@
 | **Osprey** (alt-arb) | **Done: STOP** (Decision A, 2026-10-28). Shut down 2026-11-10; scan log archived | Nothing (scanner, update timer and daily refresh disabled) | — (class story only) | STOP < 1 qualifying episode/week: met (0.0/week) |
 | **Coin Toss** (alt-scalp) | **Done: STOP at S2** (Ian confirmed 2026-11-09, d9cb4ad): median 0 reversals in 196 clean games, ≥ 3 needed. Recording stopped 2026-11-10 | Nothing (server units disabled, laptop agent unloaded) | — (class story only) | Pre-registered S2 gate failed |
 | **Bloodhound** (alt-edge) | **Done: STOP at S1** (Ian confirmed 2026-11-25, e4b65be). Pooled test + extension (71 events / 2,043 markets): Brier 0.1568 vs market 0.1580, CI [−0.0035, +0.0012], still includes 0 → STOP by the pre-registered rule | Nothing | — (class story only) | Pooled 95% upper bound < 0 needed: not met |
-| **Slot Machine** (alt-btc15) | R1: read-only order-book recorder (pre-registration approved 2026-10-14). **Maker analysis started 2026-11-25** (separate Slot Machine session): merging laptop + droplet data, counting usable windows, then the test set once | **Droplet** (`alt-btc15-recorder`, since 2026-11-09 04:45 UTC). The only service still running; ~1,525 windows recorded, 21 GB free (~2 weeks) on 2026-11-25 | R1 maker verdict; then decide whether to stop the recorder | No orders of any kind in R1. A–D can't go live (failed S1) |
+| **Slot Machine** (alt-btc15) | **Done: R1 maker test FAIL** (Ian confirmed 2026-11-25, 28c6402). M1 chosen on train lost on test; M2 not testable. Recorder stopped and disabled 2026-11-25 14:35 UTC; data kept | Nothing (unit disabled; DB stays in `/opt/alt-btc15/data`) | — (class story only) | Capped test net > 0 and 95% CI > 0: not met |
 
-**Shared server:** DigitalOcean droplet `alt-arb`, Basic 1 vCPU / 2 GB / 50 GB ($12/mo, resized 2026-11-08). Only Slot
-Machine's recorder runs on it now. Osprey's and Coin Toss's code and data stay there with their services disabled.
-Disk: 41 GB free on 2026-11-10, with R1 growing ~0.9–1.5 GB/day (`/health` alerts under 5 GB).
+**Shared server:** DigitalOcean droplet `alt-arb`, Basic 1 vCPU / 2 GB / 50 GB ($12/mo, resized 2026-11-08). **Nothing runs on
+it since 2026-11-25 14:35 UTC.** Every project's code and data stay there with its services disabled (20 GB free).
+Keeping or destroying the droplet ($12/mo) is an open owner decision.
 
 ## Results
+- **Slot Machine R1 maker test: FAIL (2026-11-25, Ian confirmed).** 910 usable windows (Oct 14 – Nov 10, after a
+  pre-committed whole-day extension, `5a0434a`); 606 train / 304 test; selection committed before the test (`0f412ec`).
+  M1 (`margin=3c join`) on test: capped −$65.12 over 93 windows, mean −$0.70/window (95% CI −$1.79 to +$0.39); uncapped
+  −$143.02 over 304 (spread earned +$227.66, adverse selection −$370.69). M2 pair capture not testable (no variant reached
+  50 traded windows; the spread was nearly always 1¢). Paper only, no orders (`project-slot-machine/docs/r1-results.md`).
 - **Bloodhound S1: STOP (2026-11-25, Ian confirmed).** The frozen model (blend-v1, `bb92f3a`) scored once on the test set
   (Nov 9: 60 events, INCONCLUSIVE) and once on the pooled test + extension (Nov 25: 71 events / 2,043 markets). Brier
   0.1568 vs the market's 0.1580: slightly better on the point estimate, but the 95% CI [−0.0035, +0.0012] includes 0, so
@@ -44,13 +49,14 @@ Disk: 41 GB free on 2026-11-10, with R1 growing ~0.9–1.5 GB/day (`/health` ale
 | **Nov 8** | Class: working build + test · droplet resized; recorders moved to it |
 | Nov 9 | Coin Toss S2 = STOP · Bloodhound S1 frozen + test scored (inconclusive) |
 | Nov 10 | Osprey shut down; Coin Toss recording stopped (both archived) |
-| Nov 25 | Bloodhound pooled extension scored once → STOP (confirmed by Ian) · Slot Machine R1 maker analysis started |
+| Nov 25 | Bloodhound pooled extension scored once → STOP · Slot Machine R1 maker test → FAIL · recorder stopped (both confirmed by Ian) |
 | **Nov 22** | Class: iteration + story assembly · Bloodhound time box |
 | **Dec 1 / Dec 4** | Class: rough cuts / final package |
 
 ## Owner to-dos (Ian)
 - [ ] Fill in the "Ian's judgment: (to fill in)" lines in each project's journal and the HQ AI log.
-- [ ] Slot Machine: review the R1 maker result when its session reports, confirm the verdict, then decide whether to stop the recorder (disk lasts ~2 weeks from Nov 25).
+- [ ] Decide whether to keep the droplet ($12/mo, nothing running) or snapshot/destroy it after the class (Dec 4).
+- [x] Slot Machine R1 maker test: FAIL confirmed; recorder stopped and disabled (2026-11-25)
 - [ ] Optional: Osprey spot-check of auto-verified pairs (the Nov 10 wrong-game find shows why it matters, but the project is done).
 - [x] Bloodhound extension scored once: STOP, confirmed (2026-11-25)
 - [x] Coin Toss S2 run: STOP (2026-11-09) · recording stopped and archived (2026-11-10)

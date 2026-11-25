@@ -15,7 +15,7 @@ here apply everywhere.
 |---|---|---|---|
 | `project-osprey/` (repo alt-arb) | Project Osprey | **Done: STOP (2026-10-28); shut down 2026-11-10** | `project-osprey/CLAUDE.md` |
 | `project-coin-toss/` (repo alt-scalp) | Project Coin Toss | **Done: STOP at S2 (2026-11-09); recording stopped 2026-11-10** | `project-coin-toss/CLAUDE.md` |
-| `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | S1: no edge for A–D. **Reopened 2026-10-14 → R1: read-only order-book recorder (droplet since 2026-11-09); maker analysis started 2026-11-25** | `project-slot-machine/CLAUDE.md` |
+| `project-slot-machine/` (repo alt-btc15) | Project Slot Machine | **Done: S1 no edge for A–D; R1 maker test FAIL (2026-11-25, Ian confirmed); recorder stopped 2026-11-25** | `project-slot-machine/CLAUDE.md` |
 | `project-bloodhound/` (repo alt-edge) | Project Bloodhound | **Done: STOP at S1 (pooled extension scored 2026-11-25, Ian confirmed)** (no services) | `project-bloodhound/CLAUDE.md` |
 Local folders use code names (renamed 2026-10-14); GitHub repo names are unchanged. Full status: `PORTFOLIO.md`. Cross-project decisions: `docs/decisions.md`.
 
@@ -44,12 +44,12 @@ skill (before the wrap-up commit), and so does any time Ian asks. Project sessio
   different IP or coordinate with Osprey first.
 - The droplet `alt-arb` (1 vCPU / 2 GB / 50 GB, resized 2026-11-08) gives each project its own Linux user, `/opt` folder
   and systemd unit. Read-only, no keys. Any live phase still needs its own server and keys.
-- Running services (since 2026-11-10): **droplet**: Slot Machine recorder only (`alt-btc15-recorder`, user `altbtc15`,
-  `/opt/alt-btc15`; ~1 book request/s, paced trade slices, 10 s pause on any 429). **Disabled, code and data kept:** Osprey
-  scanner + update timer (`/opt/alt-arb`), Coin Toss recorder + update timer (`/opt/alt-scalp`). **Laptop:** nothing
+- Running services (since 2026-11-25 14:35 UTC): **none.** **Disabled, code and data kept:** Osprey scanner + update
+  timer (`/opt/alt-arb`), Coin Toss recorder + update timer (`/opt/alt-scalp`), Slot Machine recorder
+  (`alt-btc15-recorder`, `/opt/alt-btc15`). **Laptop:** nothing
   scheduled (Osprey's daily-refresh task is disabled, launchd agents unloaded). Bloodhound runs hand-started, paced batches only.
   Moving a project folder means updating any scheduled task's folder (recreate the task; see Osprey's journal 2026-10-15).
-- Disk: Slot Machine's tape grows ~0.9–1.5 GB/day on the droplet. `/health` alerts under 5 GB free.
+- Disk: 20 GB free on the droplet after the last recorder stopped (2026-11-25); nothing grows now. `/health` alerts under 5 GB free.
 
 ## Class evidence (applies to every project)
 - Each project keeps `docs/journal.md`: dated entries with work, commit links, observation/test, decision, and
